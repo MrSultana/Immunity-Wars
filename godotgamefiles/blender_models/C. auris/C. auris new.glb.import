@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Level1.glb-253248b9369c0e96bf50f43dbddbd628.scn"
+path="res://.import/C. auris new.glb-d76b2b1a1a34dab244bd26bad2eef909.scn"
 
 [deps]
 
-source_file="res://blender_models/Level1.glb"
-dest_files=[ "res://.import/Level1.glb-253248b9369c0e96bf50f43dbddbd628.scn" ]
+source_file="res://blender_models/C. auris/C. auris new.glb"
+dest_files=[ "res://.import/C. auris new.glb-d76b2b1a1a34dab244bd26bad2eef909.scn" ]
 
 [params]
 
