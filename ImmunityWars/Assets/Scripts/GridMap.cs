@@ -2,17 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Grid
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int width;
+    private int length;
+    private int[,] gridArray;
 
-    // Update is called once per frame
-    void Update()
+    public Grid(int width, int length)
     {
-        
+        this.width = width;
+        this.length = length;
+
+        gridArray = new int[width, length];
+
+        Debug.Log(width + " " + length);
+
+        for (int x = 0; x < gridArray.GetLength(0); x++)
+        {
+            for (int y = 0; x < gridArray.GetLength(1); y++)
+            {
+                Debug.Log(x + ", " + y);
+            }
+        }
     }
 }
