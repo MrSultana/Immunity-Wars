@@ -3,22 +3,7 @@ guid: 5af7293edf3a1de468a3d8cd190cab01
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: C. AurisTexture
-    second: {fileID: 2100000, guid: 751003058f4efbe4d9a2d190966848dd, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: C. auris Nucleus
-    second: {fileID: 2100000, guid: 7bfdba2263cf20047a3e8f7d7d8ea500, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 5eaadc4d91a08994a8d33740baf69109, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

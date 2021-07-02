@@ -3,27 +3,7 @@ guid: 578bf0883e5efaf40b359a846a9764d7
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Cytokine
-    second: {fileID: 2100000, guid: 8386b2c6dc71d0d42b40aece043cd70a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: NKNucleus
-    second: {fileID: 2100000, guid: 5165e6fcc278c5041a706e7e36740a85, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: NaturalKillerMembrane
-    second: {fileID: 2100000, guid: 6ea39c44290e4a1479710543c4d6a53e, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Text
-    second: {fileID: 2100000, guid: 7ce291773425f844e8da0f5457f8bd93, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

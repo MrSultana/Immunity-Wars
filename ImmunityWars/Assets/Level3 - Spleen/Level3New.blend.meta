@@ -3,22 +3,7 @@ guid: ac0ee3618e3dea945b870e6ea6e9eca1
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Artery
-    second: {fileID: 2100000, guid: 96455dde123d47a47ac7f2c50010feb6, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SpleenTexture
-    second: {fileID: 2100000, guid: 71e8d1aa5a8afe0419cad158c912b943, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Vein
-    second: {fileID: 2100000, guid: 04abb0e6753440c4495342edd1c17d9c, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

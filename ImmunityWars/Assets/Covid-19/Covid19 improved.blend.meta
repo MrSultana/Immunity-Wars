@@ -3,27 +3,7 @@ guid: 7653139c758d152458e2f6a8e17ee191
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 5eaadc4d91a08994a8d33740baf69109, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: RNATexture
-    second: {fileID: 2100000, guid: 658756bc75ff8c74c993331ad1da03d5, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: SProteinTexture
-    second: {fileID: 2100000, guid: a1436c1b93c1caf4f8831f0ef43f4611, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ViralEnvelopeTexture
-    second: {fileID: 2100000, guid: bfac8a3c7ab7a93469ebfec521499dc1, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

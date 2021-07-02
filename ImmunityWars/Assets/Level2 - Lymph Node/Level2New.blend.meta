@@ -3,17 +3,7 @@ guid: 430beb025b495f849ae03b6d5ee821b7
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LymphNodeTexture
-    second: {fileID: 2100000, guid: 53ef89196d9a1ff4e99bde5c0eae4fd7, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: LymphVesselTexture
-    second: {fileID: 2100000, guid: f6cbef39ef337554aad5b2d5b36e96e4, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

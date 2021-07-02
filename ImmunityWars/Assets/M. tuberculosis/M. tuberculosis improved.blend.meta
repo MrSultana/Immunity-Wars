@@ -3,17 +3,7 @@ guid: 40fbc01d315b8424a8e5c7850f412b09
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Text
-    second: {fileID: 2100000, guid: 7ce291773425f844e8da0f5457f8bd93, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: TuberculosisCellWall
-    second: {fileID: 2100000, guid: 9ebd13e13c0c1f349b38152329e877bd, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,17 +3,7 @@ guid: 7c2aa428bcf143f448212029f19777e0
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: E. ColiCellWall
-    second: {fileID: 2100000, guid: 93f0503f79720be4d89358b488c05659, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Text
-    second: {fileID: 2100000, guid: 5eaadc4d91a08994a8d33740baf69109, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -3,22 +3,7 @@ guid: 6ebedac72c2439a4dba34c87a07826b7
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BCellMembrane
-    second: {fileID: 2100000, guid: 7150974bc50db2948a9a33fb77db5976, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: BCellNucleus
-    second: {fileID: 2100000, guid: f87a615dcbd41384895bc164d3ffa835, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Text
-    second: {fileID: 2100000, guid: 5eaadc4d91a08994a8d33740baf69109, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

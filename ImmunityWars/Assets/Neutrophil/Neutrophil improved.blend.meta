@@ -3,22 +3,7 @@ guid: a91914ae802cf734ebdc9610985fe782
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: NeutrophilMembrane
-    second: {fileID: 2100000, guid: a65101a14e8b180428fbf96dcdd24c6a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: NucleusTexture
-    second: {fileID: 2100000, guid: 86d956a84c5de8e4cbd6233d9fa4bc53, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Text
-    second: {fileID: 2100000, guid: 7ce291773425f844e8da0f5457f8bd93, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

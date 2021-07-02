@@ -3,22 +3,7 @@ guid: 169bef867b418d34fa074ececa3dfea3
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: KillerTCellMembrane
-    second: {fileID: 2100000, guid: b29ebdbd8dc9c634093c85946036ef71, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: KillerTCellNucleus
-    second: {fileID: 2100000, guid: d618976f53ff4dc4b99abe3199e65ad9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Text
-    second: {fileID: 2100000, guid: 7ce291773425f844e8da0f5457f8bd93, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
