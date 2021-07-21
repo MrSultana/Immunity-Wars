@@ -105,7 +105,10 @@ namespace CodeMonkey.Utils {
             GameObject gameObject = new GameObject("World_Text", typeof(TextMesh));
             Transform transform = gameObject.transform;
             transform.SetParent(parent, false);
+            Debug.Log(localPosition);
             transform.localPosition = localPosition;
+            // Debug.Log(transform.localPosition);
+            transform.Rotate(90f, 90f, -90f, Space.Self); // My own code
             TextMesh textMesh = gameObject.GetComponent<TextMesh>();
             textMesh.anchor = textAnchor;
             textMesh.alignment = textAlignment;

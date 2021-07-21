@@ -21,7 +21,7 @@ public class UtilitysClass : MonoBehaviour
         Debug.Log(localPosition);
         transform.localPosition = localPosition;
         // Debug.Log(transform.localPosition);
-        transform.Rotate(90f, 0f, 0f, Space.Self); // My own code
+        transform.Rotate(90f, 90f, -90f, Space.Self); // My own code
         TextMesh textMesh = gameObject.GetComponent<TextMesh>();
         textMesh.anchor = textAnchor;
         textMesh.alignment = textAlignment;
@@ -30,6 +30,36 @@ public class UtilitysClass : MonoBehaviour
         textMesh.color = color;
         textMesh.GetComponent<MeshRenderer>().sortingOrder = sortingOrder;
         return textMesh;
+    }
+
+    // Get Mouse Position in World with Z = 0f
+    public static Vector3 GetMouseWorldPosition()
+    {
+        Vector3 vec = GetMouseWorldPositionWithZ(Input.mousePosition, Camera.main);
+        vec.y = 0f;
+        return vec;
+    }
+
+    public static Vector3 GetMouseWorldPositionWithZ()
+    {
+        return GetMouseWorldPositionWithZ(Input.mousePosition, Camera.main);
+    }
+
+    public static Vector3 GetMouseWorldPositionWithZ(Camera worldCamera)
+    {
+        return GetMouseWorldPositionWithZ(Input.mousePosition, worldCamera);
+    }
+
+    public static Vector3 GetMouseWorldPositionWithZ(Vector3 screenPosition, Camera worldCamera)
+    {
+        Vector3 worldPosition = worldCamera.ScreenToWorldPoint(screenPosition);
+        return worldPosition;
+    }
+
+    public static Vector3 GetDirToMouse(Vector3 fromPosition)
+    {
+        Vector3 mouseWorldPosition = GetMouseWorldPosition();
+        return (mouseWorldPosition - fromPosition).normalized;
     }
 }
 
