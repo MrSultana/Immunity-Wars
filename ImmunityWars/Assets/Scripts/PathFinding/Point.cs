@@ -7,28 +7,28 @@ namespace PathFind
     public class Point
     {
         public int x;
-        public int y;
+        public int z;
 
         public Point()
         {
             x = 0;
-            y = 0;
+            z = 0;
         }
-        public Point(int iX, int iY)
+        public Point(int iX, int iZ)
         {
             this.x = iX;
-            this.y = iY;
+            this.z = iZ;
         }
 
         public Point(Point b)
         {
             x = b.x;
-            y = b.y;
+            z = b.z;
         }
 
         public override int GetHashCode()
         {
-            return x ^ y;
+            return x ^ z;
         }
 
         public override bool Equals(System.Object obj)
@@ -44,7 +44,7 @@ namespace PathFind
             }
 
             // Return true if the fields match:
-            return (x == p.x) && (y == p.y);
+            return (x == p.x) && (z == p.z);
         }
 
         public bool Equals(Point p)
@@ -54,7 +54,7 @@ namespace PathFind
                 return false;
             }
             // Return true if the fields match:
-            return (x == p.x) && (y == p.y);
+            return (x == p.x) && (z == p.z);
         }
 
         public static bool operator ==(Point a, Point b)
@@ -73,7 +73,7 @@ namespace PathFind
                 return false;
             }
             // Return true if the fields match:
-            return a.x == b.x && a.y == b.y;
+            return a.x == b.x && a.z == b.z;
         }
 
         public static bool operator !=(Point a, Point b)
@@ -81,10 +81,10 @@ namespace PathFind
             return !(a == b);
         }
 
-        public Point Set(int iX, int iY)
+        public Point Set(int iX, int iZ)
         {
             this.x = iX;
-            this.y = iY;
+            this.z = iZ;
             return this;
         }
     }

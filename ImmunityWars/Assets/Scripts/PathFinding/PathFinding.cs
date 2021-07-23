@@ -35,7 +35,7 @@ namespace PathFind
             {
                 foreach (Node node in nodes_path)
                 {
-                    ret.Add(new Point(node.gridX, node.gridY));
+                    ret.Add(new Point(node.gridX, node.gridZ));
                 }
             }
             return ret;
@@ -44,8 +44,8 @@ namespace PathFind
         // internal function to find path, don't use this one from outside
         private static List<Node> _ImpFindPath(Grid grid, Point startPos, Point targetPos)
         {
-            Node startNode = grid.nodes[startPos.x, startPos.y];
-            Node targetNode = grid.nodes[targetPos.x, targetPos.y];
+            Node startNode = grid.nodes[startPos.x, startPos.z];
+            Node targetNode = grid.nodes[targetPos.x, targetPos.z];
 
             List<Node> openSet = new List<Node>();
             HashSet<Node> closedSet = new HashSet<Node>();
@@ -110,7 +110,7 @@ namespace PathFind
         private static int GetDistance(Node nodeA, Node nodeB)
         {
             int dstX = Mathf.Abs(nodeA.gridX - nodeB.gridX);
-            int dstY = Mathf.Abs(nodeA.gridY - nodeB.gridY);
+            int dstY = Mathf.Abs(nodeA.gridZ - nodeB.gridZ);
 
             if (dstX > dstY)
                 return 14 * dstY + 10 * (dstX - dstY);
