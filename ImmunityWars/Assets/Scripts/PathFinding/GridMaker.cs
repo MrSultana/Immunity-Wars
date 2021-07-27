@@ -10,12 +10,18 @@ public class GridMaker : MonoBehaviour
     public void Start()
     {
         // create the tiles map
-        float[,] tilesmap = new float[width, length];
+        bool[,] tilesmap = new bool[width, length];
+        for (int x = 0; x < tilesmap.GetLength(0);)
+        {
+            for (int z = 0; z < tilesmap.GetLength(1);)
+            {
+                tilesmap[x, z] = true;
+            }
+        }
         // set values here....
-        // every float in the array represent the cost of passing the tile at that position.
-        // use 0.0f for blocking tiles.
+        // true = walkable, false = blockings
 
-        // create a grid
+        // create a grid  
         PathFind.Grid grid = new PathFind.Grid(width, length, tilesmap);
 
         // create source and target points
