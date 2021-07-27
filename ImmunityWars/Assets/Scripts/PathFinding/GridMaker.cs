@@ -11,9 +11,9 @@ public class GridMaker : MonoBehaviour
     {
         // create the tiles map
         bool[,] tilesmap = new bool[width, length];
-        for (int x = 0; x < tilesmap.GetLength(0);)
+        for (int x = 0; x < tilesmap.GetLength(0); x++)
         {
-            for (int z = 0; z < tilesmap.GetLength(1);)
+            for (int z = 0; z < tilesmap.GetLength(1); z++)
             {
                 tilesmap[x, z] = true;
             }

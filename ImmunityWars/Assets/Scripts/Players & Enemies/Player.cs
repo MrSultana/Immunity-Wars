@@ -38,6 +38,11 @@ namespace Interaction
         {
             
         }
+
+        public void MovePlayer()
+        {
+
+        }
     }
 }
 
