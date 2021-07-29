@@ -24,13 +24,18 @@ public class GridMaker : MonoBehaviour
         // create a grid  
         PathFind.Grid grid = new PathFind.Grid(width, length, tilesmap);
 
-        // create source and target points
+        /*// create source and target points
         PathFind.Point _from = new PathFind.Point(1, 1);
         PathFind.Point _to = new PathFind.Point(10, 10);
 
         // get path
         // path will either be a list of Points (x, y), or an empty list if no path is found.
-        List<PathFind.Point> path = PathFind.Pathfinding.FindPath(grid, _from, _to);
+        List<PathFind.Point> path = PathFind.Pathfinding.FindPath(grid, _from, _to); */
+
+    }
+
+    public void Move(Object grid, Object from, Object to)
+    {
 
     }
     
