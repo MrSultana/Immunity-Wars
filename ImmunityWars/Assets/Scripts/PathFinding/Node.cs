@@ -1,4 +1,6 @@
-﻿namespace PathFind
+﻿using UnityEngine;
+
+namespace PathFind
 {
     /**
     * A node in the grid map
@@ -10,6 +12,8 @@
         public int gridX;
         public int gridZ;
         public float penalty;
+
+        
 
         // calculated values while finding path
         public int gCost;

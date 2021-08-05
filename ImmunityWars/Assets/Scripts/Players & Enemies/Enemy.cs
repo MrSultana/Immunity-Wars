@@ -19,6 +19,11 @@ namespace Interaction
         {
 
         }
+
+        public void RecognisePlayer()
+        {
+
+        }
     }
 }
 

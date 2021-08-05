@@ -10,6 +10,9 @@ namespace PathFind
     {
         public Node[,] nodes;
         int gridSizeX, gridSizeZ;
+        // variable for node position
+        public Vector3 NodePosition;
+        public Vector3 NodePositionDrawLine;
 
         /**
         * Create a new grid with tile prices.
@@ -51,10 +54,41 @@ namespace PathFind
             {
                 for (int z = 0; z < length; z++)
                 {
-                    nodes[x, z] = new Node(walkable_tiles[x, z] ? 1.0f : 0.0f, x, z);
+                    int xGridFix = x - 11;
+                    int zGridFix = z - 17;
+                    nodes[x, z] = new Node(walkable_tiles[x, z] ? 1.0f : 0.0f, xGridFix, zGridFix);
+                    NodePosition = new Vector3(xGridFix, 0, zGridFix);
+                    //Debug.Log(NodePosition);
+                    NodePositionDrawLine = new Vector3(xGridFix, 1, zGridFix);
+                    //Debug.Log(NodePositionDrawLine);
+                    Debug.DrawLine(NodePosition, NodePositionDrawLine, Color.black, 50f, true);
                 }
             }
         }
+
+        /*public Vector3 ReturnNodePosition(int width, int length)
+        {
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition); // code taken from 
+            // https://answers.unity.com/questions/1386777/get-origin-of-plane-in-world-coordinates.html
+
+            RaycastHit hit = new RaycastHit();
+
+            for (int x = 0; x < width; x++)
+            {
+                for (int z = 0; z < length; z++)
+                {
+                    if (Physics.Raycast(ray, out hit))
+                    {
+                        if (hit.transform == nodes[x, z])
+                    }
+                }
+            }
+        }*/
+
+        /*public Vector3 ReturnNodePosition()
+        {
+            //NodePosition = 
+        }*/
 
         public List<Node> GetNeighbours(Node node)
         {

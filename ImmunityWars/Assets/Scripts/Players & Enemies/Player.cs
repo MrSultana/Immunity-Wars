@@ -10,6 +10,7 @@ namespace Interaction
         int defaultPlayerActionPoints;
         int playerActionPoints;
         bool newTurn = false;
+        PathFind.Grid grid;
 
         public Player(int playerHealth, int defaultPlayerActionPoints)
         {
@@ -34,13 +35,9 @@ namespace Interaction
             }
         }
 
-        public void RecognisePlayer()
-        {
-            
-        }
-
         public void MovePlayer()
         {
+            grid = GridMaker.ReturnGrid();
 
         }
     }

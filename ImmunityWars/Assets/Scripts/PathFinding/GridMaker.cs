@@ -3,41 +3,61 @@ using System.Collections.Generic;
 using UnityEngine;
 using PathFind;
 
-public class GridMaker : MonoBehaviour
-{
-    int width = 13;
-    int length = 46;
-    public void Start()
+namespace Interaction { 
+    public class GridMaker : MonoBehaviour
     {
-        // create the tiles map
-        bool[,] tilesmap = new bool[width, length];
-        for (int x = 0; x < tilesmap.GetLength(0); x++)
+        public static PathFind.Grid grid;
+        // need to take the position of the grid object into account
+        int width = 18;
+        int length = 46;
+
+        /*public GridMaker(PathFind.Grid grid, int width, int length)
         {
-            for (int z = 0; z < tilesmap.GetLength(1); z++)
+            this.grid = grid;
+            this.width = width;
+            this.length = length;
+        }*/
+
+        public void Start()
+        {
+            // create the tiles map
+            bool[,] tilesmap = new bool[width, length];
+            for (int x = 0; x < tilesmap.GetLength(0); x++)
             {
-                tilesmap[x, z] = true;
+                for (int z = 0; z < tilesmap.GetLength(1); z++)
+                {
+                    tilesmap[x, z] = true;
+                }
             }
+            // set values here....
+            // true = walkable, false = blockings
+
+            // create a grid  
+            grid = new PathFind.Grid(width, length, tilesmap);
+
+
+            Debug.Log(grid);
+
+
+            /*// create source and target points
+            PathFind.Point _from = new PathFind.Point(1, 1);
+            PathFind.Point _to = new PathFind.Point(10, 10);
+
+            // get path
+            // path will either be a list of Points (x, y), or an empty list if no path is found.
+            List<PathFind.Point> path = PathFind.Pathfinding.FindPath(grid, _from, _to); */
         }
-        // set values here....
-        // true = walkable, false = blockings
 
-        // create a grid  
-        PathFind.Grid grid = new PathFind.Grid(width, length, tilesmap);
+        /* public void Move(PathFind.Grid grid, PathFind.Point from, PathFind.Point to)
+        {
+            List<PathFind.Point> path = PathFind.Pathfinding.FindPath(grid, from, to);
+        } */
 
-        /*// create source and target points
-        PathFind.Point _from = new PathFind.Point(1, 1);
-        PathFind.Point _to = new PathFind.Point(10, 10);
-
-        // get path
-        // path will either be a list of Points (x, y), or an empty list if no path is found.
-        List<PathFind.Point> path = PathFind.Pathfinding.FindPath(grid, _from, _to); */
-
-    }
-
-    public void Move(Object grid, Object from, Object to)
-    {
-      
-    }
+        public static PathFind.Grid ReturnGrid()
+        {
+            return grid;
+        }
     
 
+    }
 }
