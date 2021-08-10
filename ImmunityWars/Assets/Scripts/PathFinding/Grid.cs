@@ -1,13 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-namespace PathFind
-{
+namespace PathFind {
     /**
     * The grid of nodes we use to find path
     */
-    public class Grid
-    {
+    public class Grid {
         public Node[,] nodes;
         int gridSizeX, gridSizeZ;
         // variable for node position
@@ -22,16 +20,13 @@ namespace PathFind
         *               0.0f = unwalkable tile.
         *               1.0f = normal tile.
         */
-        public Grid(int width, int length, float[,] tiles_costs)
-        {
+        public Grid(int width, int length, float[,] tiles_costs) {
             gridSizeX = width;
             gridSizeZ = length;
             nodes = new Node[width, length];
 
-            for (int x = 0; x < width; x++)
-            {
-                for (int z = 0; z < length; z++)
-                {
+            for (int x = 0; x < width; x++) {
+                for (int z = 0; z < length; z++) {
                     nodes[x, z] = new Node(tiles_costs[x, z], x, z);
 
                 }
@@ -44,16 +39,13 @@ namespace PathFind
         * length: grid length.
         * walkable_tiles: the tilemap. true for walkable, false for blocking.
         */
-        public Grid(int width, int length, bool[,] walkable_tiles)
-        {
+        public Grid(int width, int length, bool[,] walkable_tiles) {
             gridSizeX = width;
             gridSizeZ = length;
             nodes = new Node[width, length];
 
-            for (int x = 0; x < width; x++)
-            {
-                for (int z = 0; z < length; z++)
-                {
+            for (int x = 0; x < width; x++) {
+                for (int z = 0; z < length; z++) {
                     int xGridFix = x - 11;
                     int zGridFix = z - 17;
                     nodes[x, z] = new Node(walkable_tiles[x, z] ? 1.0f : 0.0f, xGridFix, zGridFix);
@@ -66,18 +58,20 @@ namespace PathFind
             }
         }
 
-        /*public Vector3 ReturnNodePosition(int width, int length)
-        {
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition); // code taken from 
-            // https://answers.unity.com/questions/1386777/get-origin-of-plane-in-world-coordinates.html
+        /*public string ReturnNodePosition(int width, int length) {
+            if (Input.GetMouseButton(0)) {
+                var ray = Camera.main.ScreenPointToRay(Input.mousePosition); // code taken from 
+                // https://answers.unity.com/questions/1386777/get-origin-of-plane-in-world-coordinates.html
+            }
+
 
             RaycastHit hit = new RaycastHit();
 
-            for (int x = 0; x < width; x++)
-            {
-                for (int z = 0; z < length; z++)
-                {
-                    if (Physics.Raycast(ray, out hit))
+            for (int x = 0; x < width; x++) {
+                for (int z = 0; z < length; z++) {
+                    //Debug.Log(nodes[x, z].GetType());
+                    return Debug.Log(hit.transform);
+                    /*if (Physics.Raycast(ray, out hit))
                     {
                         if (hit.transform == nodes[x, z])
                     }
@@ -90,22 +84,18 @@ namespace PathFind
             //NodePosition = 
         }*/
 
-        public List<Node> GetNeighbours(Node node)
-        {
+        public List<Node> GetNeighbours(Node node) {
             List<Node> neighbours = new List<Node>();
 
-            for (int x = -1; x <= 1; x++)
-            {
-                for (int z = -1; z <= 1; z++)
-                {
+            for (int x = -1; x <= 1; x++) {
+                for (int z = -1; z <= 1; z++) {
                     if (x == 0 && z == 0)
                         continue;
 
                     int checkX = node.gridX + x;
                     int checkz = node.gridZ + z;
 
-                    if (checkX >= 0 && checkX < gridSizeX && checkz >= 0 && checkz < gridSizeZ)
-                    {
+                    if (checkX >= 0 && checkX < gridSizeX && checkz >= 0 && checkz < gridSizeZ) {
                         neighbours.Add(nodes[checkX, checkz]);
                     }
                 }

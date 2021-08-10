@@ -1,19 +1,17 @@
 ﻿using UnityEngine;
 
-namespace PathFind
-{
+namespace PathFind {
     /**
     * A node in the grid map
     */
-    public class Node
-    {
+    public class Node {
         // node starting params
         public bool walkable;
         public int gridX;
         public int gridZ;
         public float penalty;
 
-        
+
 
         // calculated values while finding path
         public int gCost;
@@ -23,18 +21,15 @@ namespace PathFind
         // create the node
         // _price - how much does it cost to pass this tile. less is better, but 0.0f is for non-walkable.
         // _gridX, _gridZ - tile location in grid.
-        public Node(float _price, int _gridX, int _gridZ)
-        {
+        public Node(float _price, int _gridX, int _gridZ) {
             walkable = _price != 0.0f;
             penalty = _price;
             gridX = _gridX;
             gridZ = _gridZ;
         }
 
-        public int fCost
-        {
-            get
-            {
+        public int fCost {
+            get {
                 return gCost + hCost;
             }
         }

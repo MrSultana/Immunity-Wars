@@ -1,45 +1,37 @@
 ﻿
-namespace PathFind
-{
+namespace PathFind {
     /**
     * A 2d point on the grid
     */
-    public class Point
-    {
+    public class Point {
         public int x;
         public int z;
 
-        public Point()
-        {
+        public Point() {
             x = 0;
             z = 0;
         }
-        public Point(int iX, int iZ)
-        {
+        public Point(int iX, int iZ) {
             this.x = iX;
             this.z = iZ;
         }
 
-        public Point(Point b)
-        {
+        public Point(Point b) {
             x = b.x;
             z = b.z;
         }
 
-        public override int GetHashCode()
-        {
+        public override int GetHashCode() {
             return x ^ z;
         }
 
-        public override bool Equals(System.Object obj)
-        {
+        public override bool Equals(System.Object obj) {
             // Unlikely to compare incorrect type so removed for performance
             // if (!(obj.GetType() == typeof(PathFind.Point)))
             //     return false;
             Point p = (Point)obj;
 
-            if (ReferenceEquals(null, p))
-            {
+            if (ReferenceEquals(null, p)) {
                 return false;
             }
 
@@ -47,42 +39,34 @@ namespace PathFind
             return (x == p.x) && (z == p.z);
         }
 
-        public bool Equals(Point p)
-        {
-            if (ReferenceEquals(null, p))
-            {
+        public bool Equals(Point p) {
+            if (ReferenceEquals(null, p)) {
                 return false;
             }
             // Return true if the fields match:
             return (x == p.x) && (z == p.z);
         }
 
-        public static bool operator ==(Point a, Point b)
-        {
+        public static bool operator ==(Point a, Point b) {
             // If both are null, or both are same instance, return true.
-            if (System.Object.ReferenceEquals(a, b))
-            {
+            if (System.Object.ReferenceEquals(a, b)) {
                 return true;
             }
-            if (ReferenceEquals(null, a))
-            {
+            if (ReferenceEquals(null, a)) {
                 return false;
             }
-            if (ReferenceEquals(null, b))
-            {
+            if (ReferenceEquals(null, b)) {
                 return false;
             }
             // Return true if the fields match:
             return a.x == b.x && a.z == b.z;
         }
 
-        public static bool operator !=(Point a, Point b)
-        {
+        public static bool operator !=(Point a, Point b) {
             return !(a == b);
         }
 
-        public Point Set(int iX, int iZ)
-        {
+        public Point Set(int iX, int iZ) {
             this.x = iX;
             this.z = iZ;
             return this;

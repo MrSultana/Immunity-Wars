@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using PathFind;
 
-namespace Interaction { 
-    public class GridMaker : MonoBehaviour
-    {
+namespace Interaction {
+    public class GridMaker : MonoBehaviour {
         public static PathFind.Grid grid;
         // need to take the position of the grid object into account
         int width = 18;
-        int length = 46;
+        int length = 49;
 
         /*public GridMaker(PathFind.Grid grid, int width, int length)
         {
@@ -18,14 +17,11 @@ namespace Interaction {
             this.length = length;
         }*/
 
-        public void Start()
-        {
+        public void Start() {
             // create the tiles map
             bool[,] tilesmap = new bool[width, length];
-            for (int x = 0; x < tilesmap.GetLength(0); x++)
-            {
-                for (int z = 0; z < tilesmap.GetLength(1); z++)
-                {
+            for (int x = 0; x < tilesmap.GetLength(0); x++) {
+                for (int z = 0; z < tilesmap.GetLength(1); z++) {
                     tilesmap[x, z] = true;
                 }
             }
@@ -37,6 +33,8 @@ namespace Interaction {
 
 
             Debug.Log(grid);
+
+            //Debug.Log(grid.ReturnNodePosition(width, length));
 
 
             /*// create source and target points
@@ -53,11 +51,10 @@ namespace Interaction {
             List<PathFind.Point> path = PathFind.Pathfinding.FindPath(grid, from, to);
         } */
 
-        public static PathFind.Grid ReturnGrid()
-        {
+        public static PathFind.Grid ReturnGrid() {
             return grid;
         }
-    
+
 
     }
 }
