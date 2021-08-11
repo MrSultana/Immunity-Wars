@@ -33,7 +33,7 @@ namespace Interaction {
 
 
             Debug.Log(grid);
-
+            //
             //Debug.Log(grid.ReturnNodePosition(width, length));
 
 

@@ -49,11 +49,11 @@ namespace PathFind {
                     int xGridFix = x - 11;
                     int zGridFix = z - 17;
                     nodes[x, z] = new Node(walkable_tiles[x, z] ? 1.0f : 0.0f, xGridFix, zGridFix);
-                    NodePosition = new Vector3(xGridFix, 0, zGridFix);
+                    //NodePosition = new Vector3(xGridFix, 0, zGridFix);
                     //Debug.Log(NodePosition);
-                    NodePositionDrawLine = new Vector3(xGridFix, 1, zGridFix);
+                    //NodePositionDrawLine = new Vector3(xGridFix, 1, zGridFix);
                     //Debug.Log(NodePositionDrawLine);
-                    Debug.DrawLine(NodePosition, NodePositionDrawLine, Color.black, 50f, true);
+                    //Debug.DrawLine(NodePosition, NodePositionDrawLine, Color.black, 50f, true);
                 }
             }
         }
