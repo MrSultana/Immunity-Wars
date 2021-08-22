@@ -338,8 +338,10 @@
 "Assets/SampleScenes/Scripts/ParticleSceneControls.cs"
 "Assets/SampleScenes/Scripts/PlaceTargetWithMouse.cs"
 "Assets/SampleScenes/Scripts/SlowMoButton.cs"
+"Assets/Scripts/BlockerTest.cs"
 "Assets/Scripts/GridMap.cs"
 "Assets/Scripts/Manager.cs"
+"Assets/Scripts/MovementOnGrid.cs"
 "Assets/Scripts/PathFinding/Grid.cs"
 "Assets/Scripts/PathFinding/GridMaker.cs"
 "Assets/Scripts/PathFinding/Node.cs"
@@ -353,6 +355,7 @@
 "Assets/Scripts/Players & Enemies/Player.cs"
 "Assets/Scripts/Players & Enemies/TCell.cs"
 "Assets/Scripts/Tester.cs"
+"Assets/Scripts/TurnManager.cs"
 "Assets/Scripts/UtilitysClass.cs"
 "Assets/Scripts/UtilsClass.cs"
 -langversion:8.0

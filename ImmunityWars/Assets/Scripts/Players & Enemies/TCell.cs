@@ -9,12 +9,12 @@ public class TCell : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tCell = new Interaction.Player(4, 3);
+        //tCell = new Interaction.Player(4, 3);
     }
 
     // Update is called once per frame
     void Update()
     {
-        tCell.FindClickPosition();
+        //tCell.FindClickPosition();
     }
 }
