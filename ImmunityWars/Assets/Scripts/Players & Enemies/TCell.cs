@@ -1,20 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Interaction;
 
-public class TCell : MonoBehaviour
-{
-    Interaction.Player tCell;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //tCell = new Interaction.Player(4, 3);
-    }
+namespace Interaction {
 
-    // Update is called once per frame
-    void Update()
-    {
-        //tCell.FindClickPosition();
+    public class TCell : MonoBehaviour {
+        private Player tCell;
+        public TurnManager manageTurn = new TurnManager();
+
+        // Start is called before the first frame update
+        private void Start() {
+            tCell = gameObject.AddComponent<Player>();
+        }
+
+        // Update is called once per frame
+        private void Update() {
+            if (TurnManager)
+            tCell.MovePlayer();
+        }
     }
 }
