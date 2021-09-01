@@ -3,19 +3,19 @@ using UnityEngine;
 namespace Interaction {
 
     public class TurnManager : MonoBehaviour {
-        public string[] turns = new string[10] { "TCell", "NKCell", "Neutrophil", "BCell", "KillerTCell", "CAurisFungus", "Covid19", "Ecoli", "MTuberculosis", "SAureus" };
+        public string[] turns;
         public string currentTurn;
         public bool turnEnd = true;
 
         public TurnManager() {
             currentTurn = turns[0];
+            turnEnd = true;
+            turns = new string[10] { "TCell", "NKCell", "Neutrophil", "BCell", "KillerTCell", "CAurisFungus", "Covid19", "Ecoli", "MTuberculosis", "SAureus" };
         }
 
-        public string GetCurrentTurn() {
-
-
-            return 
-        }
+        /*public string GetCurrentTurn() {
+            return
+        }*/
 
         // Start is called before the first frame update
         private void Start() {
@@ -28,14 +28,15 @@ namespace Interaction {
                 while (turnEnd == false) {
                     currentTurn = turns[i];
                     //Debug.Log(currentTurn);
-                    turnEnd = true;
+                    if (turnEnd) {
+                        continue;
+                    }
                 }
             }
         }
 
         // Update is called once per frame
         private void Update() {
-            
         }
 
         public string[] getTurns {

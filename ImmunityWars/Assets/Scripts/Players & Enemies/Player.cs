@@ -3,17 +3,18 @@ using UnityEngine;
 namespace Interaction {
 
     public class Player : MonoBehaviour {
-        private int playerHealth;
+        public int playerHealth;
         private int defaultPlayerActionPoints;
-        private int playerActionPoints;
+        public int playerActionPoints;
         private bool newTurn = false;
+        public TurnManager manageTurn = new TurnManager();
         private Vector3 newPosition;
         //PathFind.Grid grid;
         //Vector3 clickPosition;
 
         public Player(int playerHealth, int defaultPlayerActionPoints) {
             this.playerHealth = playerHealth;
-            this.playerActionPoints = defaultPlayerActionPoints;
+            playerActionPoints = defaultPlayerActionPoints;
         }
 
         private void Start() {
@@ -21,6 +22,15 @@ namespace Interaction {
         }
 
         private void Update() {
+            TurnChange();
+            manageTurn.TurnEnd();
+        }
+
+        public void TurnChange() {
+            if (playerActionPoints == 0) {
+                newTurn = true;
+                manageTurn.turnEnd = newTurn;
+            }
         }
 
         public void MovePlayer() {
