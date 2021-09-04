@@ -7,6 +7,13 @@ namespace Interaction {
         int enemyHealth;
         int attackDamage;
 
+        public void Start() {
+          
+        }
+
+        public void Update() {
+            
+        }
         public Enemy(int enemyHealth, int attackDamage) {
             this.enemyHealth = enemyHealth;
             this.attackDamage = attackDamage;

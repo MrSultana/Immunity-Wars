@@ -6,15 +6,16 @@ namespace Interaction {
         public int playerHealth;
         private int defaultPlayerActionPoints;
         public int playerActionPoints;
-        private bool newTurn = false;
-        public TurnManager manageTurn = new TurnManager();
+        //public TurnManager manageTurn;
         private Vector3 newPosition;
+        public int testValue = 3;
         //PathFind.Grid grid;
         //Vector3 clickPosition;
 
         public Player(int playerHealth, int defaultPlayerActionPoints) {
             this.playerHealth = playerHealth;
             playerActionPoints = defaultPlayerActionPoints;
+            //manageTurn = gameObject.AddComponent<TurnManager>();
         }
 
         private void Start() {
@@ -22,14 +23,14 @@ namespace Interaction {
         }
 
         private void Update() {
-            TurnChange();
-            manageTurn.TurnEnd();
+            //TurnChange();
+            //manageTurn.TurnEnd();
         }
 
         public void TurnChange() {
             if (playerActionPoints == 0) {
-                newTurn = true;
-                manageTurn.turnEnd = newTurn;
+                //manageTurn.turnEnd = true;
+                playerActionPoints = defaultPlayerActionPoints;
             }
         }
 
@@ -38,13 +39,15 @@ namespace Interaction {
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit)) {
-                    Debug.Log(hit.point);
+                    //Debug.Log(hit.point);
                     newPosition = hit.point;
                     newPosition.y = 1.2f;
                     newPosition = ExtensionMethods.RoundVector3(newPosition, 1.2f);
+                    Debug.Log(newPosition);
                     transform.position = newPosition;
                 }
             }
+            
         }
 
         private void Damage(int damage) {
@@ -55,11 +58,11 @@ namespace Interaction {
             playerActionPoints = playerActionPoints - pointsUsed;
         }
 
-        private void PointsRefresh(int playerActionPoints) {
+        /*private void PointsRefresh(int playerActionPoints) {
             if (newTurn) {
                 playerActionPoints = defaultPlayerActionPoints;
             }
-        }
+        }*/
 
         public void FindClickPosition() {
         }

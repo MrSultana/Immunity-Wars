@@ -1,46 +1,41 @@
 using UnityEngine;
+using System;
 
 namespace Interaction {
 
     public class TurnManager : MonoBehaviour {
-        public string[] turns;
+        public enum Turns { TCell, NKCell, Neutrophil, BCell, KillerTCell, AurisFungus, Covid19, Ecoli, MTuberculosis, SAureus };
+        public string[] turnsNames;
         public string currentTurn;
-        public bool turnEnd = true;
+        public bool turnEnd;
 
         public TurnManager() {
-            currentTurn = turns[0];
             turnEnd = true;
-            turns = new string[10] { "TCell", "NKCell", "Neutrophil", "BCell", "KillerTCell", "CAurisFungus", "Covid19", "Ecoli", "MTuberculosis", "SAureus" };
+            turnsNames = Enum.GetNames(typeof(Turns));
+            currentTurn = turnsNames[0];
         }
 
         /*public string GetCurrentTurn() {
             return
         }*/
 
-        // Start is called before the first frame update
-        private void Start() {
-            //Debug.Log(turns[0]);
-        }
-
         public void TurnEnd() {
-            for (int i = 0; i < turns.Length; i++) {
+            for (int i = 0; i < turnsNames.Length; i++) {
                 turnEnd = false;
+                currentTurn = turnsNames[i];
                 while (turnEnd == false) {
-                    currentTurn = turns[i];
                     //Debug.Log(currentTurn);
                     if (turnEnd) {
-                        continue;
+                        continue; // exit if and while loop to continue interation in for loop
                     }
                 }
             }
         }
 
-        // Update is called once per frame
-        private void Update() {
-        }
 
-        public string[] getTurns {
-            get { return turns; }
-        }
+
+        /*public string[] getTurns {
+            get { return Turns; }
+        }*/
     }
 }
