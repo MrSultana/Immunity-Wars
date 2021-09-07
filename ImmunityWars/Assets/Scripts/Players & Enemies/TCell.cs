@@ -15,13 +15,9 @@ namespace Interaction {
         private void Update() {
             tCell.MovePlayer();
 
-            
-
             /*if (Input.GetMouseButton(0)) {
                 tCell.playerActionPoints -= 1; // Everytime the player makes a movement, decrease the action points
             }*/
-
         }
-
     }
 }

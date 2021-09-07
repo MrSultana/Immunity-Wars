@@ -6,8 +6,10 @@ namespace Interaction {
         public int playerHealth;
         private int defaultPlayerActionPoints;
         public int playerActionPoints;
+
         //public TurnManager manageTurn;
         private Vector3 newPosition;
+
         public int testValue = 3;
         //PathFind.Grid grid;
         //Vector3 clickPosition;
@@ -47,7 +49,6 @@ namespace Interaction {
                     transform.position = newPosition;
                 }
             }
-            
         }
 
         private void Damage(int damage) {

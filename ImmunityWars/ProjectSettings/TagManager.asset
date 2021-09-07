@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - MovementGrid
+  - Enemy
   layers:
   - Default
   - TransparentFX

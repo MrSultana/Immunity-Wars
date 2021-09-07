@@ -1,10 +1,12 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
 namespace Interaction {
 
     public class TurnManager : MonoBehaviour {
+
         public enum Turns { TCell, NKCell, Neutrophil, BCell, KillerTCell, AurisFungus, Covid19, Ecoli, MTuberculosis, SAureus };
+
         public string[] turnsNames;
         public string currentTurn;
         public bool turnEnd;
@@ -31,8 +33,6 @@ namespace Interaction {
                 }
             }
         }
-
-
 
         /*public string[] getTurns {
             get { return Turns; }
