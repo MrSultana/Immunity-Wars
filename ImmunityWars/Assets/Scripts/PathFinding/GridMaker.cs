@@ -30,9 +30,6 @@ namespace Interaction {
 
             // create a grid  
             grid = new PathFind.Grid(width, length, tilesmap);
-
-
-            Debug.Log(grid);
             //
             //Debug.Log(grid.ReturnNodePosition(width, length));
 

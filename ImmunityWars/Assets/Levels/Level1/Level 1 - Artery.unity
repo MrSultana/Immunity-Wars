@@ -439,6 +439,49 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381300096}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &447335853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 447335854}
+  - component: {fileID: 447335855}
+  m_Layer: 0
+  m_Name: TurnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &447335854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447335853}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.782694, y: -16.52773, z: 7.207882}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &447335855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447335853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9df1b9b5574854b9680162b7ca548e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &471523482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,7 +1388,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &981641197
 PrefabInstance:
@@ -2823,62 +2866,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a9cf3093647ef4883015ae84579267, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1977763671
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1977763673}
-  - component: {fileID: 1977763672}
-  m_Layer: 0
-  m_Name: TurnManager
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1977763672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977763671}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c9df1b9b5574854b9680162b7ca548e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  turnsNames:
-  - TCell
-  - NKCell
-  - Neutrophil
-  - BCell
-  - KillerTCell
-  - AurisFungus
-  - Covid19
-  - Ecoli
-  - MTuberculosis
-  - SAureus
-  currentTurn: TCell
-  turnEnd: 1
---- !u!4 &1977763673
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977763671}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.820558, y: 4.4140854, z: 15.176761}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2015160813
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,7 +3059,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 306e103e39e902d4788056e91bf20b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testValue: 3
 --- !u!114 &2017163457
 MonoBehaviour:
   m_ObjectHideFlags: 0

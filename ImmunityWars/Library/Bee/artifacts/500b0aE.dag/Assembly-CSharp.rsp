@@ -339,6 +339,8 @@
 "Assets/SampleScenes/Scripts/PlaceTargetWithMouse.cs"
 "Assets/SampleScenes/Scripts/SlowMoButton.cs"
 "Assets/Scripts/BlockerTest.cs"
+"Assets/Scripts/CustomMovementScript.cs"
+"Assets/Scripts/DDOL.cs"
 "Assets/Scripts/ExtensionMethods.cs"
 "Assets/Scripts/GridMap.cs"
 "Assets/Scripts/Manager.cs"

@@ -4,12 +4,10 @@ namespace Interaction {
 
     public class Player : MonoBehaviour {
         public int playerHealth;
-        private int defaultPlayerActionPoints;
+        public int defaultPlayerActionPoints;
         public int playerActionPoints;
-
-        //public TurnManager manageTurn;
         private Vector3 newPosition;
-
+        public TurnManager manageTurn;
         public int testValue = 3;
         //PathFind.Grid grid;
         //Vector3 clickPosition;
@@ -17,6 +15,7 @@ namespace Interaction {
         public Player(int playerHealth, int defaultPlayerActionPoints) {
             this.playerHealth = playerHealth;
             playerActionPoints = defaultPlayerActionPoints;
+            manageTurn = GameObject.Find("TurnManager").GetComponent<TurnManager>();
             //manageTurn = gameObject.AddComponent<TurnManager>();
         }
 
@@ -25,15 +24,7 @@ namespace Interaction {
         }
 
         private void Update() {
-            //TurnChange();
-            //manageTurn.TurnEnd();
-        }
-
-        public void TurnChange() {
-            if (playerActionPoints == 0) {
-                //manageTurn.turnEnd = true;
-                playerActionPoints = defaultPlayerActionPoints;
-            }
+            
         }
 
         public void MovePlayer() {
@@ -51,6 +42,7 @@ namespace Interaction {
             }
         }
 
+
         private void Damage(int damage) {
             playerHealth = playerHealth - damage;
         }
@@ -59,13 +51,10 @@ namespace Interaction {
             playerActionPoints = playerActionPoints - pointsUsed;
         }
 
-        /*private void PointsRefresh(int playerActionPoints) {
-            if (newTurn) {
+        private void PointsRefresh(int playerActionPoints) {
+            if (TurnManager.newTurn) {
                 playerActionPoints = defaultPlayerActionPoints;
             }
-        }*/
-
-        public void FindClickPosition() {
         }
     }
 }
