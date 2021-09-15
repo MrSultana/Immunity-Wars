@@ -6,9 +6,9 @@ namespace Interaction {
 
     public class TurnManager : MonoBehaviour {
 
-        public enum Turns { TCell, NKCell, Neutrophil, BCell, KillerTCell, AurisFungus, Covid19, Ecoli, MTuberculosis, SAureus };
+        public enum Turns { TCell, NKCell, Neutrophil, BCell, KillerTCell, CAurisFungus, Covid19, EColi, MTuberculosis, SAureus };
         public static string currentTurn;
-        public static bool turnEnd = true;
+        public static bool turnEnd = false;
         public static bool newTurn = false;
 
         /*public string GetCurrentTurn() {
@@ -16,21 +16,27 @@ namespace Interaction {
         }*/
 
         public void Start() {
-            StartTurnEnd();
+            StartTrackTurn();
 
 
+        }
+
+        public void Update() {
         }
 
         public IEnumerator TrackTurn() {
             for (int i = 0; i < Enum.GetValues(typeof(Turns)).Length; i++) {
                 turnEnd = false;
 
-
                 currentTurn = Enum.GetName(typeof(Turns), i);
+                Debug.Log(i);
                 yield return new WaitUntil(() => turnEnd == true);
+                Debug.Log(turnEnd);
                 if (turnEnd) {
                     newTurn = true;
-                    continue; // exit if and while loop to continue interation in for loop
+                    turnEnd = false;
+                    yield return new WaitUntil(() => turnEnd == false);
+                    yield return new WaitForSeconds(.25f);
                 }
             }
         }
@@ -39,19 +45,8 @@ namespace Interaction {
             get { return Turns; }
         }*/
 
-        public void StartTurnEnd() {
+        public void StartTrackTurn() {
             StartCoroutine(TrackTurn());
-        }
-
-        public static bool HasTurnEnded() {
-            
-            if(turnEnd) {
-                return true;
-            }
-
-            else {
-                return false;
-            }
         }
     }
 }

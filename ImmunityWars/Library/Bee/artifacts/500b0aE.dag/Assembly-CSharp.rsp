@@ -359,7 +359,7 @@
 "Assets/Scripts/Players & Enemies/MTuberculosis.cs"
 "Assets/Scripts/Players & Enemies/Neutrophil.cs"
 "Assets/Scripts/Players & Enemies/NKCell.cs"
-"Assets/Scripts/Players & Enemies/Player.cs"
+"Assets/Scripts/Players & Enemies/PlayerEnemy.cs"
 "Assets/Scripts/Players & Enemies/SAureus.cs"
 "Assets/Scripts/Players & Enemies/TCell.cs"
 "Assets/Scripts/Tester.cs"
