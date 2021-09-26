@@ -9,6 +9,7 @@ namespace Interaction {
         private Vector3 newPosition;
         public TurnManager manageTurn;
         public int testValue = 3;
+        public bool withinDistance;
         //PathFind.Grid grid;
         //Vector3 clickPosition;
 
@@ -30,16 +31,18 @@ namespace Interaction {
         public void MovePlayer() {
             if (Input.GetMouseButton(0)) {
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                RaycastHit hit;
-                if (Physics.Raycast(ray, out hit)) {
+                if (Physics.Raycast(ray, out RaycastHit hit)) {
                     //Debug.Log(hit.point);
                     newPosition = hit.point;
                     newPosition.y = 1.2f;
                     newPosition = ExtensionMethods.RoundVector3(newPosition, 1.2f);
-                    Debug.Log(newPosition);
-                    transform.position = newPosition;
+                    withinDistance = ExtensionMethods.FindDifferenceBetweenVector3(transform.position, newPosition);
+                    //if (withinDistance) {
+                        //Debug.Log(newPosition);
+                        transform.position = newPosition;
+                    //}
                 }
-                
+
             }
         }
 

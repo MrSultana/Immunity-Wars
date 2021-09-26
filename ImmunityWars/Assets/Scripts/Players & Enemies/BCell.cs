@@ -27,7 +27,7 @@ namespace Interaction {
                 bCell.PointsRefresh(bCell.playerActionPoints, bCell.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) /*&& bCell.withinDistance*/) {
                 Debug.Log(TurnManager.currentTurn);
                 bCell.playerActionPoints -= 1;
             }

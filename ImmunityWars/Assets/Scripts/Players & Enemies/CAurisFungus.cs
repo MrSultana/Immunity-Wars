@@ -27,7 +27,7 @@ namespace Interaction {
                 cAuris.PointsRefresh(cAuris.playerActionPoints, cAuris.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) /*&& cAuris.withinDistance*/) {
                 Debug.Log(TurnManager.currentTurn);
                 cAuris.playerActionPoints -= 1;
             }

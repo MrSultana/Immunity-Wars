@@ -27,7 +27,7 @@ namespace Interaction {
                 eColi.PointsRefresh(eColi.playerActionPoints, eColi.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) /*&& eColi.withinDistance*/) {
                 Debug.Log(TurnManager.currentTurn);
                 eColi.playerActionPoints -= 1;
             }

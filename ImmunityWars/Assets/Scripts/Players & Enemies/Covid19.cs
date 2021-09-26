@@ -27,7 +27,7 @@ namespace Interaction {
                 covid19.PointsRefresh(covid19.playerActionPoints, covid19.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) /*&& covid19.withinDistance*/) {
                 Debug.Log(TurnManager.currentTurn);
                 covid19.playerActionPoints -= 1;
             }

@@ -27,7 +27,7 @@ namespace Interaction {
                 mTuberculosis.PointsRefresh(mTuberculosis.playerActionPoints, mTuberculosis.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) /*&& mTuberculosis.withinDistance*/) {
                 Debug.Log(TurnManager.currentTurn);
                 mTuberculosis.playerActionPoints -= 1;
             }

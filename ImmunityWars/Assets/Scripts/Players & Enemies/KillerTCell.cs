@@ -27,7 +27,7 @@ namespace Interaction {
                 killerTCell.PointsRefresh(killerTCell.playerActionPoints, killerTCell.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) /*&& killerTCell.withinDistance*/) {
                 Debug.Log(TurnManager.currentTurn);
                 killerTCell.playerActionPoints -= 1;
             }

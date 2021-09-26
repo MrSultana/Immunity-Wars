@@ -27,7 +27,7 @@ namespace Interaction {
                 nkCell.PointsRefresh(nkCell.playerActionPoints, nkCell.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) && nkCell.withinDistance) {
                 Debug.Log(TurnManager.currentTurn);
                 nkCell.playerActionPoints -= 1;
             }

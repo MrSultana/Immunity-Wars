@@ -27,7 +27,7 @@ namespace Interaction {
                 sAureus.PointsRefresh(sAureus.playerActionPoints, sAureus.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) /*&& sAureus.withinDistance*/) {
                 Debug.Log(TurnManager.currentTurn);
                 sAureus.playerActionPoints -= 1;
             }

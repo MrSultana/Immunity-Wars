@@ -27,7 +27,7 @@ namespace Interaction {
                 neutrophil.PointsRefresh(neutrophil.playerActionPoints, neutrophil.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.GetMouseButtonDown(0) /*&& neutrophil.withinDistance*/) {
                 Debug.Log(TurnManager.currentTurn);
                 neutrophil.playerActionPoints -= 1;
             }

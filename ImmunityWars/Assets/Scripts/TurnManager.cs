@@ -25,11 +25,19 @@ namespace Interaction {
         }
 
         public IEnumerator TrackTurn() {
-            for (int i = 0; i < Enum.GetValues(typeof(Turns)).Length; i++) {
-                turnEnd = false;
-
-                currentTurn = Enum.GetName(typeof(Turns), i);
+            for (int i = 0; i < Enum.GetValues(typeof(Turns)).Length + 1; i++) {
                 Debug.Log(i);
+                
+
+                turnEnd = false;
+                    
+                currentTurn = Enum.GetName(typeof(Turns), i);
+                if (i == 10) {
+                    Debug.Log("Jeff");
+                    StartTrackTurn();
+                    break;
+                }
+
                 yield return new WaitUntil(() => turnEnd == true);
                 Debug.Log(turnEnd);
                 if (turnEnd) {
