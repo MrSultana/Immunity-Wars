@@ -3,17 +3,16 @@ using UnityEngine;
 namespace Interaction {
 
     public class Neutrophil : MonoBehaviour {
-        private Player neutrophil;
+        private PlayerEnemy neutrophil;
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
-            neutrophil = gameObject.AddComponent<Player>();
+            neutrophil = gameObject.AddComponent<PlayerEnemy>();
             neutrophil.defaultPlayerActionPoints = 3;
             neutrophil.playerActionPoints = neutrophil.defaultPlayerActionPoints;
             neutrophil.playerHealth = 3;
         }
-
 
         // Update is called once per frame
         private void Update() {

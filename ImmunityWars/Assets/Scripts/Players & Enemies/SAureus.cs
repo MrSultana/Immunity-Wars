@@ -3,17 +3,16 @@ using UnityEngine;
 namespace Interaction {
 
     public class SAureus : MonoBehaviour {
-        private Player sAureus;
+        private PlayerEnemy sAureus;
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
-            sAureus = gameObject.AddComponent<Player>();
+            sAureus = gameObject.AddComponent<PlayerEnemy>();
             sAureus.defaultPlayerActionPoints = 3;
             sAureus.playerActionPoints = sAureus.defaultPlayerActionPoints;
             sAureus.playerHealth = 3;
         }
-
 
         // Update is called once per frame
         private void Update() {

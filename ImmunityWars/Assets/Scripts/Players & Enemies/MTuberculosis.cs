@@ -3,17 +3,16 @@ using UnityEngine;
 namespace Interaction {
 
     public class MTuberculosis : MonoBehaviour {
-        private Player mTuberculosis;
+        private PlayerEnemy mTuberculosis;
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
-            mTuberculosis = gameObject.AddComponent<Player>();
+            mTuberculosis = gameObject.AddComponent<PlayerEnemy>();
             mTuberculosis.defaultPlayerActionPoints = 3;
             mTuberculosis.playerActionPoints = mTuberculosis.defaultPlayerActionPoints;
             mTuberculosis.playerHealth = 3;
         }
-
 
         // Update is called once per frame
         private void Update() {

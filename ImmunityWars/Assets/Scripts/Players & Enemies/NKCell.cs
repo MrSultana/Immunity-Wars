@@ -3,17 +3,16 @@ using UnityEngine;
 namespace Interaction {
 
     public class NKCell : MonoBehaviour {
-        private Player nkCell;
+        private PlayerEnemy nkCell;
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
-            nkCell = gameObject.AddComponent<Player>();
+            nkCell = gameObject.AddComponent<PlayerEnemy>();
             nkCell.defaultPlayerActionPoints = 3;
             nkCell.playerActionPoints = nkCell.defaultPlayerActionPoints;
             nkCell.playerHealth = 2;
         }
-
 
         // Update is called once per frame
         private void Update() {

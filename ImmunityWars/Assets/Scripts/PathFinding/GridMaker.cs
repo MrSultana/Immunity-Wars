@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using PathFind;
 
 namespace Interaction {
+
     public class GridMaker : MonoBehaviour {
         public static PathFind.Grid grid;
+
         // need to take the position of the grid object into account
-        int width = 18;
-        int length = 49;
+        private int width = 18;
+
+        private int length = 49;
 
         /*public GridMaker(PathFind.Grid grid, int width, int length)
         {
@@ -28,11 +28,10 @@ namespace Interaction {
             // set values here....
             // true = walkable, false = blockings
 
-            // create a grid  
+            // create a grid
             grid = new PathFind.Grid(width, length, tilesmap);
             //
             //Debug.Log(grid.ReturnNodePosition(width, length));
-
 
             /*// create source and target points
             PathFind.Point _from = new PathFind.Point(1, 1);
@@ -51,7 +50,5 @@ namespace Interaction {
         public static PathFind.Grid ReturnGrid() {
             return grid;
         }
-
-
     }
 }

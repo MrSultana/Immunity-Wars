@@ -3,6 +3,7 @@ using UnityEngine;
 namespace Interaction {
 
     internal static class ExtensionMethods {
+
         // Most this code based off this: https://answers.unity.com/questions/589983/using-mathfround-for-a-vector3.html
         public static Vector3 RoundVector3(this Vector3 vector3, float yPosition, int decimalPlaces = 1) {
             /*float multiplier = 1;
@@ -25,7 +26,7 @@ namespace Interaction {
 
             if (dX > allowedDifference || dX < allowedDifference) {
                 return false;
-            } 
+            }
             else if (dZ > allowedDifference || dZ < allowedDifference) {
                 return false;
             }

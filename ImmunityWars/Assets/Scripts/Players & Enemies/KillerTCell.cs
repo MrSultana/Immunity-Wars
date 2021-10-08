@@ -3,17 +3,16 @@ using UnityEngine;
 namespace Interaction {
 
     public class KillerTCell : MonoBehaviour {
-        private Player killerTCell;
+        private PlayerEnemy killerTCell;
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
-            killerTCell = gameObject.AddComponent<Player>();
+            killerTCell = gameObject.AddComponent<PlayerEnemy>();
             killerTCell.defaultPlayerActionPoints = 3;
             killerTCell.playerActionPoints = killerTCell.defaultPlayerActionPoints;
             killerTCell.playerHealth = 3;
         }
-
 
         // Update is called once per frame
         private void Update() {

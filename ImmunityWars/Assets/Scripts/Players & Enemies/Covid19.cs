@@ -3,17 +3,16 @@ using UnityEngine;
 namespace Interaction {
 
     public class Covid19 : MonoBehaviour {
-        private Player covid19;
+        private PlayerEnemy covid19;
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
-            covid19 = gameObject.AddComponent<Player>();
+            covid19 = gameObject.AddComponent<PlayerEnemy>();
             covid19.defaultPlayerActionPoints = 3;
             covid19.playerActionPoints = covid19.defaultPlayerActionPoints;
             covid19.playerHealth = 3;
         }
-
 
         // Update is called once per frame
         private void Update() {

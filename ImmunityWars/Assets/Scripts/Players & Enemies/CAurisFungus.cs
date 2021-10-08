@@ -3,17 +3,16 @@ using UnityEngine;
 namespace Interaction {
 
     public class CAurisFungus : MonoBehaviour {
-        private Player cAuris;
+        private PlayerEnemy cAuris;
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
-            cAuris = gameObject.AddComponent<Player>();
+            cAuris = gameObject.AddComponent<PlayerEnemy>();
             cAuris.defaultPlayerActionPoints = 3;
             cAuris.playerActionPoints = cAuris.defaultPlayerActionPoints;
             cAuris.playerHealth = 3;
         }
-
 
         // Update is called once per frame
         private void Update() {

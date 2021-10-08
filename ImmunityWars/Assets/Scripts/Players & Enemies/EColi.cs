@@ -3,17 +3,16 @@ using UnityEngine;
 namespace Interaction {
 
     public class EColi : MonoBehaviour {
-        private Player eColi;
+        private PlayerEnemy eColi;
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
-            eColi = gameObject.AddComponent<Player>();
+            eColi = gameObject.AddComponent<PlayerEnemy>();
             eColi.defaultPlayerActionPoints = 3;
             eColi.playerActionPoints = eColi.defaultPlayerActionPoints;
             eColi.playerHealth = 3;
         }
-
 
         // Update is called once per frame
         private void Update() {

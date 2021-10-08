@@ -1,8 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Interaction {
 
-    public class Player : MonoBehaviour {
+    public class PlayerEnemy : MonoBehaviour {
         public int playerHealth;
         public int defaultPlayerActionPoints;
         public int playerActionPoints;
@@ -10,10 +11,11 @@ namespace Interaction {
         public TurnManager manageTurn;
         public int testValue = 3;
         public bool withinDistance;
+        public static List<Vector3> currentPositions;
         //PathFind.Grid grid;
         //Vector3 clickPosition;
 
-        public Player(int playerHealth, int defaultPlayerActionPoints) {
+        public PlayerEnemy(int playerHealth, int defaultPlayerActionPoints) {
             this.playerHealth = playerHealth;
             playerActionPoints = defaultPlayerActionPoints;
             manageTurn = GameObject.Find("TurnManager").GetComponent<TurnManager>();
@@ -21,11 +23,9 @@ namespace Interaction {
         }
 
         private void Start() {
-            newPosition = transform.position;
         }
 
         private void Update() {
-            
         }
 
         public void MovePlayer() {
@@ -37,15 +37,21 @@ namespace Interaction {
                     newPosition.y = 1.2f;
                     newPosition = ExtensionMethods.RoundVector3(newPosition, 1.2f);
                     withinDistance = ExtensionMethods.FindDifferenceBetweenVector3(transform.position, newPosition);
+                    //if (!currentPositions.Contains(newPosition)) {
+                    transform.position = newPosition;
+                    //AddPositionToArray(transform.position);
+                    //}
                     //if (withinDistance) {
-                        //Debug.Log(newPosition);
-                        transform.position = newPosition;
+                    //Debug.Log(newPosition);
+
                     //}
                 }
-
             }
         }
 
+        public void AddPositionToArray(Vector3 position) {
+            currentPositions.Add(position);
+        }
 
         private void Damage(int damage) {
             playerHealth = playerHealth - damage;
