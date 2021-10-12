@@ -1,5 +1,8 @@
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Linq;
 
 namespace Interaction {
 
@@ -11,7 +14,12 @@ namespace Interaction {
         public TurnManager manageTurn;
         public int testValue = 3;
         public bool withinDistance;
-        public static List<Vector3> currentPositions;
+        public static List<Vector3> currentPositions = new List<Vector3>();
+
+        public bool canMove = false;
+
+        private Image healthBar;
+        private float MaxHealth = 3f;
         //PathFind.Grid grid;
         //Vector3 clickPosition;
 
@@ -23,9 +31,11 @@ namespace Interaction {
         }
 
         private void Start() {
+            healthBar = GetComponent<Image>();
         }
 
         private void Update() {
+            //healthBar.fillAmount = playerHealth / MaxHealth;
         }
 
         public void MovePlayer() {
@@ -37,10 +47,25 @@ namespace Interaction {
                     newPosition.y = 1.2f;
                     newPosition = ExtensionMethods.RoundVector3(newPosition, 1.2f);
                     withinDistance = ExtensionMethods.FindDifferenceBetweenVector3(transform.position, newPosition);
-                    //if (!currentPositions.Contains(newPosition)) {
-                    transform.position = newPosition;
-                    //AddPositionToArray(transform.position);
-                    //}
+
+                    //Checks if any players or enemies are at the position to move to. if not, move the player there
+                    if(!currentPositions.Contains<Vector3>(newPosition)) {
+                        transform.position = newPosition;
+                    } else {
+                        Debug.Log("Can't move there!");
+                        canMove = false;
+                    }
+                    
+                    //Adds the final player position to the currentPositions array for position tracking
+                    if (playerActionPoints == 0) {
+                        AddPositionToArray(transform.position);
+                        foreach(var x in currentPositions) {
+                            Debug.Log(x.ToString());
+                        }
+                    }
+
+                    canMove = true;
+
                     //if (withinDistance) {
                     //Debug.Log(newPosition);
 

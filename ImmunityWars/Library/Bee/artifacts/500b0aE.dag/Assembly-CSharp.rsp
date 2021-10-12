@@ -343,6 +343,7 @@
 "Assets/Scripts/DDOL.cs"
 "Assets/Scripts/ExtensionMethods.cs"
 "Assets/Scripts/GridMap.cs"
+"Assets/Scripts/Healthbar.cs"
 "Assets/Scripts/Manager.cs"
 "Assets/Scripts/MovementOnGrid.cs"
 "Assets/Scripts/PathFinding/Grid.cs"
