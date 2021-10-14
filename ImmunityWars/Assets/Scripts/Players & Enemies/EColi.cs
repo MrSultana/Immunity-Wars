@@ -12,6 +12,8 @@ namespace Interaction {
             eColi.defaultPlayerActionPoints = 3;
             eColi.playerActionPoints = eColi.defaultPlayerActionPoints;
             eColi.playerHealth = 3;
+
+            PlayerEnemy.startingPositions.Add(transform.position);
         }
 
         // Update is called once per frame

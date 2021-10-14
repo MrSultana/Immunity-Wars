@@ -12,6 +12,8 @@ namespace Interaction {
             bCell.defaultPlayerActionPoints = 3;
             bCell.playerActionPoints = bCell.defaultPlayerActionPoints;
             bCell.playerHealth = 3;
+
+            PlayerEnemy.startingPositions.Add(transform.position);
         }
 
         // Update is called once per frame

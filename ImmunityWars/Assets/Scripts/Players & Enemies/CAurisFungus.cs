@@ -12,6 +12,8 @@ namespace Interaction {
             cAuris.defaultPlayerActionPoints = 3;
             cAuris.playerActionPoints = cAuris.defaultPlayerActionPoints;
             cAuris.playerHealth = 3;
+
+            PlayerEnemy.startingPositions.Add(transform.position);
         }
 
         // Update is called once per frame

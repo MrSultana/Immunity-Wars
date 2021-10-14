@@ -12,6 +12,8 @@ namespace Interaction {
             killerTCell.defaultPlayerActionPoints = 3;
             killerTCell.playerActionPoints = killerTCell.defaultPlayerActionPoints;
             killerTCell.playerHealth = 3;
+
+            PlayerEnemy.startingPositions.Add(transform.position);
         }
 
         // Update is called once per frame
@@ -26,7 +28,7 @@ namespace Interaction {
                 killerTCell.PointsRefresh(killerTCell.playerActionPoints, killerTCell.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0) /*&& killerTCell.withinDistance*/) {
+            if (Input.GetMouseButtonDown(0) && killerTCell.canMove) {
                 Debug.Log(TurnManager.currentTurn);
                 killerTCell.playerActionPoints -= 1;
             }

@@ -363,6 +363,7 @@
 "Assets/Scripts/Players & Enemies/PlayerEnemy.cs"
 "Assets/Scripts/Players & Enemies/SAureus.cs"
 "Assets/Scripts/Players & Enemies/TCell.cs"
+"Assets/Scripts/PositionManager.cs"
 "Assets/Scripts/Tester.cs"
 "Assets/Scripts/TurnManager.cs"
 "Assets/Scripts/UtilitysClass.cs"

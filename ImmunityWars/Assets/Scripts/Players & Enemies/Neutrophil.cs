@@ -12,6 +12,8 @@ namespace Interaction {
             neutrophil.defaultPlayerActionPoints = 3;
             neutrophil.playerActionPoints = neutrophil.defaultPlayerActionPoints;
             neutrophil.playerHealth = 3;
+
+            PlayerEnemy.startingPositions.Add(transform.position);
         }
 
         // Update is called once per frame

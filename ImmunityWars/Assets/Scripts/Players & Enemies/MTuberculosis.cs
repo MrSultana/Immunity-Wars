@@ -12,6 +12,8 @@ namespace Interaction {
             mTuberculosis.defaultPlayerActionPoints = 3;
             mTuberculosis.playerActionPoints = mTuberculosis.defaultPlayerActionPoints;
             mTuberculosis.playerHealth = 3;
+
+            PlayerEnemy.startingPositions.Add(transform.position);
         }
 
         // Update is called once per frame
@@ -26,7 +28,7 @@ namespace Interaction {
                 mTuberculosis.PointsRefresh(mTuberculosis.playerActionPoints, mTuberculosis.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0) /*&& mTuberculosis.withinDistance*/) {
+            if (Input.GetMouseButtonDown(0) && mTuberculosis.canMove) {
                 Debug.Log(TurnManager.currentTurn);
                 mTuberculosis.playerActionPoints -= 1;
             }

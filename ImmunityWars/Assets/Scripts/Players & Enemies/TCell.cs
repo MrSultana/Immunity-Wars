@@ -12,6 +12,11 @@ namespace Interaction {
             tCell.defaultPlayerActionPoints = 3;
             tCell.playerActionPoints = tCell.defaultPlayerActionPoints;
             tCell.playerHealth = 3;
+
+            PlayerEnemy.startingPositions.Add(transform.position);
+            foreach (var x in PlayerEnemy.startingPositions) {
+                Debug.Log(x.ToString());
+            }
         }
 
         // Update is called once per frame

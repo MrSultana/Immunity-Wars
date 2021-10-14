@@ -12,6 +12,8 @@ namespace Interaction {
             sAureus.defaultPlayerActionPoints = 3;
             sAureus.playerActionPoints = sAureus.defaultPlayerActionPoints;
             sAureus.playerHealth = 3;
+
+            PlayerEnemy.startingPositions.Add(transform.position);
         }
 
         // Update is called once per frame
@@ -26,7 +28,7 @@ namespace Interaction {
                 sAureus.PointsRefresh(sAureus.playerActionPoints, sAureus.defaultPlayerActionPoints);
             }
 
-            if (Input.GetMouseButtonDown(0) /*&& sAureus.withinDistance*/) {
+            if (Input.GetMouseButtonDown(0) && sAureus.canMove) {
                 Debug.Log(TurnManager.currentTurn);
                 sAureus.playerActionPoints -= 1;
             }

@@ -12,6 +12,8 @@ namespace Interaction {
             covid19.defaultPlayerActionPoints = 3;
             covid19.playerActionPoints = covid19.defaultPlayerActionPoints;
             covid19.playerHealth = 3;
+
+            PlayerEnemy.startingPositions.Add(transform.position);
         }
 
         // Update is called once per frame
