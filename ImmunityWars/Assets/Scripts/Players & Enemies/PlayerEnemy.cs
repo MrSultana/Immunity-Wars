@@ -22,8 +22,6 @@ namespace Interaction {
 
         private GameObject colliderGameobject;
 
-        private Image healthBar;
-        private float MaxHealth = 3f;
         //PathFind.Grid grid;
         //Vector3 clickPosition;
 
@@ -35,7 +33,6 @@ namespace Interaction {
         }
 
         private void Start() {
-            healthBar = GetComponent<Image>();
         }
 
         private void Update() {
@@ -99,7 +96,6 @@ namespace Interaction {
                     }
 
                     canMove = true;
-
                     //if (withinDistance) {
                     //Debug.Log(newPosition);
 
