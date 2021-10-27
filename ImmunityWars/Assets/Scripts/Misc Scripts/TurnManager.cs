@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 
 namespace Interaction {
@@ -31,7 +30,6 @@ namespace Interaction {
             for (int i = 0; i < Enum.GetValues(typeof(Turns)).Length + 1; i++) {
                 Debug.Log(i);
 
-                
                 if (playerEnemyToSkip.Contains(i)) {
                     Debug.Log("Skipping " + Enum.GetName(typeof(Turns), i));
                     continue;

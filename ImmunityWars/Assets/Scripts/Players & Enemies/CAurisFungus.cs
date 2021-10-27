@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Interaction {
 
     public class CAurisFungus : MonoBehaviour {
         private PlayerEnemy cAuris;
+
+        public GameObject healthBar;
+        public GameObject actionBar;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
@@ -20,6 +25,8 @@ namespace Interaction {
         private void Update() {
             //Debug.Log(TurnManager.currentTurn);
             if (TurnManager.currentTurn == "CAurisFungus") {
+                healthBar.GetComponent<Slider>().value = cAuris.playerHealth;
+                actionBar.GetComponent<Slider>().value = cAuris.playerActionPoints;
                 cAuris.MovePlayer();
             }
 

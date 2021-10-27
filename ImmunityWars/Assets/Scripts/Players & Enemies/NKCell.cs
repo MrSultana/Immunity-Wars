@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Interaction {
 
     public class NKCell : MonoBehaviour {
         private PlayerEnemy nkCell;
+
+        public GameObject healthBar;
+        public GameObject actionBar;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
@@ -20,6 +25,8 @@ namespace Interaction {
         private void Update() {
             //Debug.Log(TurnManager.currentTurn);
             if (TurnManager.currentTurn == "NKCell") {
+                healthBar.GetComponent<Slider>().value = nkCell.playerHealth;
+                actionBar.GetComponent<Slider>().value = nkCell.playerActionPoints;
                 nkCell.MovePlayer();
             }
 

@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Interaction {
 
     public class SAureus : MonoBehaviour {
         private PlayerEnemy sAureus;
+
+        public GameObject healthBar;
+        public GameObject actionBar;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
@@ -20,6 +25,8 @@ namespace Interaction {
         private void Update() {
             //Debug.Log(TurnManager.currentTurn);
             if (TurnManager.currentTurn == "SAureus") {
+                healthBar.GetComponent<Slider>().value = sAureus.playerHealth;
+                actionBar.GetComponent<Slider>().value = sAureus.playerActionPoints;
                 sAureus.MovePlayer();
             }
 

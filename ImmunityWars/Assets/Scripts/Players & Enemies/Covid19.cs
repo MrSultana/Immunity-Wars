@@ -1,9 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
+
 
 namespace Interaction {
 
     public class Covid19 : MonoBehaviour {
         private PlayerEnemy covid19;
+
+        public GameObject healthBar;
+        public GameObject actionBar;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
@@ -20,6 +26,8 @@ namespace Interaction {
         private void Update() {
             //Debug.Log(TurnManager.currentTurn);
             if (TurnManager.currentTurn == "Covid19") {
+                healthBar.GetComponent<Slider>().value = covid19.playerHealth;
+                actionBar.GetComponent<Slider>().value = covid19.playerActionPoints;
                 covid19.MovePlayer();
             }
 

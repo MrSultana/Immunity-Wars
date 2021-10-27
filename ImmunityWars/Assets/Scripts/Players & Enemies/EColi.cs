@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Interaction {
 
     public class EColi : MonoBehaviour {
         private PlayerEnemy eColi;
+
+        public GameObject healthBar;
+        public GameObject actionBar;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
@@ -20,6 +25,8 @@ namespace Interaction {
         private void Update() {
             //Debug.Log(TurnManager.currentTurn);
             if (TurnManager.currentTurn == "EColi") {
+                healthBar.GetComponent<Slider>().value = eColi.playerHealth;
+                actionBar.GetComponent<Slider>().value = eColi.playerActionPoints;
                 eColi.MovePlayer();
             }
 

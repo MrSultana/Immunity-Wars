@@ -1,9 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Interaction {
 
     public class TCell : MonoBehaviour {
         private PlayerEnemy tCell;
+
+        public GameObject healthBar;
+        public GameObject actionBar;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
@@ -23,6 +28,8 @@ namespace Interaction {
         private void Update() {
             //Debug.Log(TurnManager.currentTurn);
             if (TurnManager.currentTurn == "TCell") {
+                healthBar.GetComponent<Slider>().value = tCell.playerHealth;
+                actionBar.GetComponent<Slider>().value = tCell.playerActionPoints;
                 tCell.MovePlayer();
             }
 

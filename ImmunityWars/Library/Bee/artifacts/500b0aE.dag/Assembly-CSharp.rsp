@@ -365,7 +365,8 @@
 "Assets/Scripts/Players & Enemies/PlayerEnemy.cs"
 "Assets/Scripts/Players & Enemies/SAureus.cs"
 "Assets/Scripts/Players & Enemies/TCell.cs"
-"Assets/Scripts/UI and Menus/HealthActionBar.cs"
+"Assets/Scripts/UI and Menus/ActionBar.cs"
+"Assets/Scripts/UI and Menus/HealthBar.cs"
 "Assets/Scripts/UI and Menus/Manager.cs"
 "Assets/Scripts/UI and Menus/PlayerEnemyTextDisplay.cs"
 -langversion:8.0
