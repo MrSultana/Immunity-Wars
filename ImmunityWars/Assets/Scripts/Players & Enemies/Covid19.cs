@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-
 namespace Interaction {
 
     public class Covid19 : MonoBehaviour {

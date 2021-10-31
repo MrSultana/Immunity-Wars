@@ -1,8 +1,5 @@
 using System.Collections.Generic;
-using System;
 using UnityEngine;
-using UnityEngine.UI;
-using System.Linq;
 
 namespace Interaction {
 
@@ -41,65 +38,52 @@ namespace Interaction {
         }
 
         public void MovePlayer() {
+            canMove = false;
             if (Input.GetMouseButtonDown(0)) {
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Creates a new ray that is released from the camera to the the mouse click position
                 if (Physics.Raycast(ray, out RaycastHit hit)) { // Checks if the raycast hits a collider on the layer "Raycollision"
-
                     colliderGameobject = hit.collider.gameObject;
 
                     if (colliderGameobject.GetComponent("Capsule Collider") && colliderGameobject.CompareTag("Player") || colliderGameobject.CompareTag("Enemy")) { // If the user clicked on a player or enemy
+                        Debug.Log("Jeff");
                         if (colliderGameobject == gameObject) {
                             Debug.Log("Won't damage myself!");
                             return; // Cancel attack if user clicked on the current player or enemy
-                        } else if (colliderGameobject.CompareTag(gameObject.tag)) {
+                        }
+                        else if (colliderGameobject.CompareTag(gameObject.tag)) {
                             Debug.Log("Can't attack my own team!");
                             return; // Cancel attack if the user tried to attack a character of the same team
-                        } else {
+                        }
+                        else {
                             GameObject objectHit = colliderGameobject;
-                            Attack(objectHit); // Run the attack method on the clicked player or enemy
+                            if (ExtensionMethods.AccountingForPlayerEnemyDistance(transform.position, colliderGameobject.transform.position)) {
+                                Attack(objectHit); // Run the attack method on the clicked player or enemy
+                                canMove = true;
+                            } else {
+                                Debug.Log("Too far!");
+                            }  
                         }
                     }
-
+                     
+                    // If the click point hits anywhere on the grid that isn't a player or enemy
                     if (colliderGameobject.tag != "Player" && colliderGameobject.tag != "Enemy") {
                         newPosition = hit.point;
                         newPosition.y = 1.2f;
                         newPosition = ExtensionMethods.RoundVector3(newPosition, 1.2f);
-                        transform.position = newPosition;
-                    }
-
-                    
-                    
-                    /*if (currentPositions.Contains<Vector3>(newPosition) || startingPositions.Contains<Vector3>(newPosition)) { // Checks if any player or enemy is at the mouse click pos
-                        for (int i = 0; i < Enum.GetValues(typeof(TurnManager.Turns)).Length; i++) {
-                            if (GameObject.Find(Enum.GetName(typeof(TurnManager.Turns), i)) == GameObject.Find("NKCell Parent")) {
-                                Attack(GameObject.Find(Enum.GetName(typeof(TurnManager.Turns), i)));
-                            }
+                        withinDistance = ExtensionMethods.FindDifferenceBetweenVector3(transform.position, newPosition);
+                        if (withinDistance) {
+                            transform.position = newPosition;
+                            canMove = true;
                         }
-                    }*/
-
-                    /*if (!currentPositions.Contains<Vector3>(newPosition)) {
-                        transform.position = newPosition;
                     }
-                    else {
-                        Debug.Log("Can't move there!");
-                        canMove = false;
-                    }*/
-                    
-                    withinDistance = ExtensionMethods.FindDifferenceBetweenVector3(transform.position, newPosition);
-                    
+
                     //Adds the final player position to the currentPositions array for position tracking
                     if (playerActionPoints == 0) {
                         AddPositionToArray(transform.position);
-                        foreach(var x in currentPositions) {
+                        foreach (var x in currentPositions) {
                             Debug.Log(x.ToString());
                         }
                     }
-
-                    canMove = true;
-                    //if (withinDistance) {
-                    //Debug.Log(newPosition);
-
-                    //}
                 }
             }
         }
@@ -109,7 +93,6 @@ namespace Interaction {
         }
 
         private void Damage(GameObject victimDamage) {
-            
             if (victimDamage.GetComponent<PlayerEnemy>()) {
                 victimDamage.GetComponent<PlayerEnemy>().playerHealth -= 1;
             }

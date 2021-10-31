@@ -1,28 +1,28 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - BlockerTest
+    - ActionBar
     - CodeMonkey.Assets
     - Interaction.BCell
     - Interaction.CAurisFungus
     - Interaction.Covid19
     - Interaction.EColi
+    - Interaction.GameManagement
     - Interaction.GridMaker
+    - Interaction.HealthBar
     - Interaction.KillerTCell
     - Interaction.MTuberculosis
-    - Interaction.MovementOnGrid
     - Interaction.NKCell
     - Interaction.Neutrophil
+    - Interaction.PlayerEnemyTextDisplay
     - Interaction.SAureus
     - Interaction.TCell
     - Interaction.TurnManager
     - Manager
+    - PositionManager
     - Tester
     AstarPathfindingProject.dll:
-    - AstarPath
     - Pathfinding.AIDestinationSetter
-    - Pathfinding.AIPath
-    - Pathfinding.BlockManager
     - Pathfinding.Seeker
     - Pathfinding.SingleNodeBlocker
     Unity.Rider.Editor.dll:
@@ -44,6 +44,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
     Assets/Levels/ControlScreen.unity:
@@ -61,8 +62,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -72,15 +71,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1536}
     - Class: 114
-      Script: {instanceID: 1746}
+      Script: {instanceID: 1748}
     - Class: 114
-      Script: {instanceID: 2944}
+      Script: {instanceID: 2948}
     - Class: 114
-      Script: {instanceID: 3142}
+      Script: {instanceID: 3146}
     - Class: 114
-      Script: {instanceID: 3426}
+      Script: {instanceID: 3434}
     - Class: 114
-      Script: {instanceID: 3928}
+      Script: {instanceID: 3934}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -112,8 +111,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -123,15 +120,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1536}
     - Class: 114
-      Script: {instanceID: 1746}
+      Script: {instanceID: 1748}
     - Class: 114
-      Script: {instanceID: 2944}
+      Script: {instanceID: 2948}
     - Class: 114
-      Script: {instanceID: 3142}
+      Script: {instanceID: 3146}
     - Class: 114
-      Script: {instanceID: 3426}
+      Script: {instanceID: 3434}
     - Class: 114
-      Script: {instanceID: 3928}
+      Script: {instanceID: 3934}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -231,6 +228,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
     - Class: 95
@@ -248,54 +247,62 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1628}
     - Class: 114
-      Script: {instanceID: 1772}
+      Script: {instanceID: 1640}
     - Class: 114
-      Script: {instanceID: 1778}
+      Script: {instanceID: 1748}
     - Class: 114
-      Script: {instanceID: 1912}
+      Script: {instanceID: 1774}
     - Class: 114
-      Script: {instanceID: 1996}
+      Script: {instanceID: 1780}
     - Class: 114
-      Script: {instanceID: 2004}
+      Script: {instanceID: 1836}
     - Class: 114
-      Script: {instanceID: 2058}
+      Script: {instanceID: 1998}
     - Class: 114
-      Script: {instanceID: 2466}
+      Script: {instanceID: 2006}
     - Class: 114
-      Script: {instanceID: 2494}
+      Script: {instanceID: 2468}
     - Class: 114
-      Script: {instanceID: 2720}
+      Script: {instanceID: 2496}
     - Class: 114
-      Script: {instanceID: 2858}
+      Script: {instanceID: 2666}
     - Class: 114
-      Script: {instanceID: 2914}
+      Script: {instanceID: 2722}
     - Class: 114
-      Script: {instanceID: 2938}
+      Script: {instanceID: 2860}
     - Class: 114
-      Script: {instanceID: 2944}
+      Script: {instanceID: 2866}
     - Class: 114
-      Script: {instanceID: 3032}
+      Script: {instanceID: 2918}
     - Class: 114
-      Script: {instanceID: 3142}
+      Script: {instanceID: 2948}
     - Class: 114
-      Script: {instanceID: 3250}
+      Script: {instanceID: 3146}
     - Class: 114
-      Script: {instanceID: 3426}
+      Script: {instanceID: 3254}
     - Class: 114
-      Script: {instanceID: 3546}
+      Script: {instanceID: 3360}
     - Class: 114
-      Script: {instanceID: 3700}
+      Script: {instanceID: 3372}
     - Class: 114
-      Script: {instanceID: 3782}
+      Script: {instanceID: 3434}
     - Class: 114
-      Script: {instanceID: 3998}
+      Script: {instanceID: 3554}
     - Class: 114
-      Script: {instanceID: 4068}
+      Script: {instanceID: 3788}
     - Class: 114
-      Script: {instanceID: 4084}
+      Script: {instanceID: 3934}
+    - Class: 114
+      Script: {instanceID: 4004}
+    - Class: 114
+      Script: {instanceID: 4074}
+    - Class: 114
+      Script: {instanceID: 4090}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 136
       Script: {instanceID: 0}
     - Class: 143
       Script: {instanceID: 0}
@@ -326,8 +333,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
-    - Class: 89
-      Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
@@ -337,17 +342,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1536}
     - Class: 114
-      Script: {instanceID: 1746}
+      Script: {instanceID: 1748}
     - Class: 114
-      Script: {instanceID: 2944}
+      Script: {instanceID: 2948}
     - Class: 114
-      Script: {instanceID: 2946}
+      Script: {instanceID: 2950}
     - Class: 114
-      Script: {instanceID: 3142}
+      Script: {instanceID: 3146}
     - Class: 114
-      Script: {instanceID: 3426}
+      Script: {instanceID: 3434}
     - Class: 114
-      Script: {instanceID: 3928}
+      Script: {instanceID: 3934}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -451,6 +456,12 @@ ScriptsOnlyBuild:
     className: ParticleSceneControls
   - hash:
       serializedVersion: 2
+      Hash: 30089670d0b1f7c6bc7ba678a809b43f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ActionBar
+  - hash:
+      serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -517,7 +528,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: Neutrophil
@@ -529,7 +540,7 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: CAurisFungus
@@ -643,7 +654,7 @@ ScriptsOnlyBuild:
     className: TargetFieldOfView
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: MTuberculosis
@@ -733,7 +744,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: a5a9a3694487eedbd9ff592298a9df80
+      Hash: cdb5ba41acc31db5b814e7a4aaf65f68
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: PlayerEnemy
@@ -895,7 +906,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: KillerTCell
@@ -907,7 +918,7 @@ ScriptsOnlyBuild:
     className: SceneAndURLLoader
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: EColi
@@ -1003,6 +1014,12 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
+      Hash: 3b86e6f0a615cec2199d59c97c1b1a52
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Interaction
+    className: PlayerEnemyTextDisplay
+  - hash:
+      serializedVersion: 2
       Hash: e08b7fd025e5743e5563e22fdd827075
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Vehicles.Car
@@ -1015,7 +1032,7 @@ ScriptsOnlyBuild:
     className: SmoothFollow
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: BCell
@@ -1081,7 +1098,13 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: cc2160bbef5ff13b44b690a0449dde04
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Interaction
+    className: GameManagement
+  - hash:
+      serializedVersion: 2
+      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: Covid19
@@ -1105,7 +1128,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: SAureus
@@ -1345,6 +1368,18 @@ ScriptsOnlyBuild:
     className: WaypointCircuit
   - hash:
       serializedVersion: 2
+      Hash: f24e805d5a464810f20912426eeb4d51
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Interaction
+    className: HealthBar
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PositionManager
+  - hash:
+      serializedVersion: 2
       Hash: 8abe5c5970b933d28c84fe29c2232578
     assemblyName: AstarPathfindingProject.dll
     namespaceName: Pathfinding
@@ -1507,12 +1542,6 @@ ScriptsOnlyBuild:
     className: MobileControlRig
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: BlockerTest
-  - hash:
-      serializedVersion: 2
       Hash: 0e0c7e6c34f2d19ba95cf463e39888b1
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Characters.FirstPerson
@@ -1633,7 +1662,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: NKCell
@@ -1651,7 +1680,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: TCell

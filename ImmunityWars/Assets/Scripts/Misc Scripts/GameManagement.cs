@@ -1,16 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System.Linq;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace Interaction {
-    public class GameManagement : MonoBehaviour {
 
+    public class GameManagement : MonoBehaviour {
         public static GameObject[] playersArray;
         public static GameObject[] enemiesArray;
         public static GameObject[] playerEnemyManagement = new GameObject[10];
         public static GameObject skipTurnObject;
+
+        public Text gameEndTitle;
+        public GameObject endGameScreen;
 
         public void Start() {
             playersArray = GameObject.FindGameObjectsWithTag("Player");
@@ -25,18 +26,17 @@ namespace Interaction {
             playerEnemyManagement = playersArray.Concat(enemiesArray).ToArray();
         }
 
-        public static void GameEnd() {
+        public void GameEnd() {
             if (GameObject.FindGameObjectsWithTag("Player").Length <= 0) {
-                Debug.Log("The invaders won!");
-                Debug.Log("Closing game...");
-                Application.Quit();
-            } 
-            else if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0) {
-                Debug.Log("The immune cells won!");
-                Debug.Log("Closing game...");
+                gameEndTitle.text = "The Invaders Won!";
+                endGameScreen.SetActive(true);
                 Application.Quit();
             }
-
+            else if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0) {
+                gameEndTitle.text = "The Immune Cells Won!";
+                endGameScreen.SetActive(true);
+                Application.Quit();
+            }
         }
 
         public static void SkipTurn() {
@@ -46,7 +46,6 @@ namespace Interaction {
                 if (!skipTurnObject.activeInHierarchy) { // If the object is inactive
                     Debug.Log(playerEnemyManagement[i].name);
                 }
-
             }
         }
 

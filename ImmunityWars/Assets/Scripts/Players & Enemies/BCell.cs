@@ -9,7 +9,6 @@ namespace Interaction {
         public GameObject healthBar;
         public GameObject actionBar;
 
-
         //public int testValue = 3;
 
         // Start is called before the first frame update

@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ActionBar : MonoBehaviour {
+
     // For Action Points Bar
     public Slider actionSlider;
 

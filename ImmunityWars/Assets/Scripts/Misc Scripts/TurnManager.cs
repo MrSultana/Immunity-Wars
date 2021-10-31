@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Interaction {
 
@@ -36,7 +36,7 @@ namespace Interaction {
                 }
 
                 turnEnd = false;
-                
+
                 currentTurn = Enum.GetName(typeof(Turns), i);
                 if (i == 10) { // resets the loop if all 10 turns have finished
                     Debug.Log("Jeff");
@@ -62,7 +62,5 @@ namespace Interaction {
         public void StartTrackTurn() {
             StartCoroutine(TrackTurn());
         }
-
-        
     }
 }
