@@ -11,6 +11,10 @@ public class Manager : MonoBehaviour {
         SceneManager.LoadScene("ControlScreen");
     }
 
+    public void GoToInfo() {
+
+    }
+
     public void GoToCredits() {
         SceneManager.LoadScene("Credits");
     }

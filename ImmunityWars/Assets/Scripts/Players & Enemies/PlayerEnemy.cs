@@ -44,7 +44,7 @@ namespace Interaction {
                 if (Physics.Raycast(ray, out RaycastHit hit)) { // Checks if the raycast hits a collider on the layer "Raycollision"
                     colliderGameobject = hit.collider.gameObject;
 
-                    if (colliderGameobject.GetComponent("Capsule Collider") && colliderGameobject.CompareTag("Player") || colliderGameobject.CompareTag("Enemy")) { // If the user clicked on a player or enemy
+                    if (colliderGameobject.CompareTag("Enemy") || colliderGameobject.CompareTag("Player")) { // If the user clicked on a player or enemy
                         Debug.Log("Jeff");
                         if (colliderGameobject == gameObject) {
                             Debug.Log("Won't damage myself!");
@@ -59,10 +59,12 @@ namespace Interaction {
                             if (ExtensionMethods.AccountingForPlayerEnemyDistance(transform.position, colliderGameobject.transform.position)) {
                                 Attack(objectHit); // Run the attack method on the clicked player or enemy
                                 canMove = true;
-                            } else {
+                            }
+                            else {
                                 Debug.Log("Too far!");
-                            }  
+                            }
                         }
+ 
                     }
                      
                     // If the click point hits anywhere on the grid that isn't a player or enemy
@@ -101,6 +103,7 @@ namespace Interaction {
         private void Death() {
             if (playerHealth == 0) {
                 gameObject.SetActive(false);
+                TurnManager.playerEnemyToSkip.Add(gameObject.name);
                 Debug.Log("Victim destroyed");
             }
         }

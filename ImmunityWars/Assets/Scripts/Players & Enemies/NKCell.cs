@@ -16,7 +16,7 @@ namespace Interaction {
             nkCell = gameObject.AddComponent<PlayerEnemy>();
             nkCell.defaultPlayerActionPoints = 3;
             nkCell.playerActionPoints = nkCell.defaultPlayerActionPoints;
-            nkCell.playerHealth = 2;
+            nkCell.playerHealth = 3;
 
             PlayerEnemy.startingPositions.Add(transform.position);
         }

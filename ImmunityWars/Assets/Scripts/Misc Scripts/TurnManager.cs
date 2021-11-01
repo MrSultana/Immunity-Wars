@@ -13,7 +13,7 @@ namespace Interaction {
         public static bool turnEnd = false;
         public static bool newTurn = false;
 
-        public static List<int> playerEnemyToSkip = new List<int>();
+        public static List<string> playerEnemyToSkip = new List<string>();
 
         /*public string GetCurrentTurn() {
             return
@@ -30,7 +30,7 @@ namespace Interaction {
             for (int i = 0; i < Enum.GetValues(typeof(Turns)).Length + 1; i++) {
                 Debug.Log(i);
 
-                if (playerEnemyToSkip.Contains(i)) {
+                if (playerEnemyToSkip.Contains(Enum.GetName(typeof(Turns), i))) {
                     Debug.Log("Skipping " + Enum.GetName(typeof(Turns), i));
                     continue;
                 }
