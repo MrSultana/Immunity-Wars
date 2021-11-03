@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Interaction {
 
@@ -11,6 +12,8 @@ namespace Interaction {
         public TurnManager manageTurn;
         public int testValue = 3;
         public bool withinDistance;
+
+        public Text indicatorsText;
 
         public static List<Vector3> currentPositions = new List<Vector3>();
         public static List<Vector3> startingPositions = new List<Vector3>();

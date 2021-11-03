@@ -9,11 +9,16 @@ namespace Interaction {
         public GameObject healthBar;
         public GameObject actionBar;
 
+        public Behaviour halo;
+
+        public Text indicatorsText;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
             mTuberculosis = gameObject.AddComponent<PlayerEnemy>();
+            mTuberculosis.indicatorsText = indicatorsText;
             mTuberculosis.defaultPlayerActionPoints = 3;
             mTuberculosis.playerActionPoints = mTuberculosis.defaultPlayerActionPoints;
             mTuberculosis.playerHealth = 3;
@@ -27,7 +32,10 @@ namespace Interaction {
             if (TurnManager.currentTurn == "MTuberculosis") {
                 healthBar.GetComponent<Slider>().value = mTuberculosis.playerHealth;
                 actionBar.GetComponent<Slider>().value = mTuberculosis.playerActionPoints;
+                halo.enabled = true;
                 mTuberculosis.MovePlayer();
+            } else {
+                halo.enabled = false;
             }
 
             if (mTuberculosis.playerActionPoints == 0) {

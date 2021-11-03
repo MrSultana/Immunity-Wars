@@ -9,11 +9,16 @@ namespace Interaction {
         public GameObject healthBar;
         public GameObject actionBar;
 
+        public Behaviour halo;
+
+        public Text indicatorsText;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
             nkCell = gameObject.AddComponent<PlayerEnemy>();
+            nkCell.indicatorsText = indicatorsText;
             nkCell.defaultPlayerActionPoints = 3;
             nkCell.playerActionPoints = nkCell.defaultPlayerActionPoints;
             nkCell.playerHealth = 3;
@@ -27,7 +32,10 @@ namespace Interaction {
             if (TurnManager.currentTurn == "NKCell") {
                 healthBar.GetComponent<Slider>().value = nkCell.playerHealth;
                 actionBar.GetComponent<Slider>().value = nkCell.playerActionPoints;
+                halo.enabled = true;
                 nkCell.MovePlayer();
+            } else {
+                halo.enabled = false;
             }
 
             if (nkCell.playerActionPoints == 0) {

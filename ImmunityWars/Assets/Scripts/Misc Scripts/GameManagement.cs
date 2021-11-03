@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,8 @@ namespace Interaction {
 
         public Text gameEndTitle;
         public GameObject endGameScreen;
+        public Text levelText;
+        public Text indicatorText;
 
         public void Start() {
             playersArray = GameObject.FindGameObjectsWithTag("Player");
@@ -24,6 +27,8 @@ namespace Interaction {
                 Debug.Log(enemiesArray[i]);
             }*/
             playerEnemyManagement = playersArray.Concat(enemiesArray).ToArray();
+
+            StartCoroutine(LevelText());
         }
 
         public void GameEnd() {
@@ -47,6 +52,26 @@ namespace Interaction {
                     Debug.Log(playerEnemyManagement[i].name);
                 }
             }
+        }
+
+        private IEnumerator LevelText() {
+            for (float i = 2.5f; i >= 0; i -= Time.deltaTime) {
+                levelText.color = new Color(1, 1, 1, i);
+                yield return null;
+            }
+            levelText.enabled = false;
+        }
+
+        public IEnumerator Indicators(string textToDisplay) {
+            indicatorText.text = textToDisplay;
+            for (float i = 2f; i >= 0; i -= Time.deltaTime) {
+                indicatorText.color = new Color(1, 1, 1, i);
+                yield return null;
+            }
+        }
+
+        public void StartIndicator(string textToDisplay) {
+            StartCoroutine(Indicators(textToDisplay));
         }
 
         private void Update() {

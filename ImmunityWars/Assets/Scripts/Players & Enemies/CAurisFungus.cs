@@ -9,11 +9,16 @@ namespace Interaction {
         public GameObject healthBar;
         public GameObject actionBar;
 
+        public Behaviour halo;
+
+        public Text indicatorsText;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
             cAuris = gameObject.AddComponent<PlayerEnemy>();
+            cAuris.indicatorsText = indicatorsText;
             cAuris.defaultPlayerActionPoints = 3;
             cAuris.playerActionPoints = cAuris.defaultPlayerActionPoints;
             cAuris.playerHealth = 3;
@@ -27,7 +32,10 @@ namespace Interaction {
             if (TurnManager.currentTurn == "CAurisFungus") {
                 healthBar.GetComponent<Slider>().value = cAuris.playerHealth;
                 actionBar.GetComponent<Slider>().value = cAuris.playerActionPoints;
+                halo.enabled = true;
                 cAuris.MovePlayer();
+            } else {
+                halo.enabled = false;
             }
 
             if (cAuris.playerActionPoints == 0) {

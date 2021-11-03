@@ -9,11 +9,16 @@ namespace Interaction {
         public GameObject healthBar;
         public GameObject actionBar;
 
+        public Behaviour halo;
+
+        public Text indicatorsText;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
             neutrophil = gameObject.AddComponent<PlayerEnemy>();
+            neutrophil.indicatorsText = indicatorsText;
             neutrophil.defaultPlayerActionPoints = 3;
             neutrophil.playerActionPoints = neutrophil.defaultPlayerActionPoints;
             neutrophil.playerHealth = 3;
@@ -27,7 +32,10 @@ namespace Interaction {
             if (TurnManager.currentTurn == "Neutrophil") {
                 healthBar.GetComponent<Slider>().value = neutrophil.playerHealth;
                 actionBar.GetComponent<Slider>().value = neutrophil.playerActionPoints;
+                halo.enabled = true;
                 neutrophil.MovePlayer();
+            } else {
+                halo.enabled = false;
             }
 
             if (neutrophil.playerActionPoints == 0) {

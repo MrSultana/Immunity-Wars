@@ -9,11 +9,16 @@ namespace Interaction {
         public GameObject healthBar;
         public GameObject actionBar;
 
+        public Behaviour halo;
+
+        public Text indicatorsText;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
             covid19 = gameObject.AddComponent<PlayerEnemy>();
+            covid19.indicatorsText = indicatorsText;
             covid19.defaultPlayerActionPoints = 3;
             covid19.playerActionPoints = covid19.defaultPlayerActionPoints;
             covid19.playerHealth = 3;
@@ -27,7 +32,10 @@ namespace Interaction {
             if (TurnManager.currentTurn == "Covid19") {
                 healthBar.GetComponent<Slider>().value = covid19.playerHealth;
                 actionBar.GetComponent<Slider>().value = covid19.playerActionPoints;
+                halo.enabled = true;
                 covid19.MovePlayer();
+            } else {
+                halo.enabled = false;
             }
 
             if (covid19.playerActionPoints == 0) {

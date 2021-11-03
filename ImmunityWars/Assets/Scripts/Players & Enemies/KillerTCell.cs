@@ -9,11 +9,16 @@ namespace Interaction {
         public GameObject healthBar;
         public GameObject actionBar;
 
+        public Behaviour halo;
+
+        public Text indicatorsText;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
             killerTCell = gameObject.AddComponent<PlayerEnemy>();
+            killerTCell.indicatorsText = indicatorsText;
             killerTCell.defaultPlayerActionPoints = 3;
             killerTCell.playerActionPoints = killerTCell.defaultPlayerActionPoints;
             killerTCell.playerHealth = 3;
@@ -27,7 +32,10 @@ namespace Interaction {
             if (TurnManager.currentTurn == "KillerTCell") {
                 healthBar.GetComponent<Slider>().value = killerTCell.playerHealth;
                 actionBar.GetComponent<Slider>().value = killerTCell.playerActionPoints;
+                halo.enabled = true;
                 killerTCell.MovePlayer();
+            } else {
+                halo.enabled = false;
             }
 
             if (killerTCell.playerActionPoints == 0) {

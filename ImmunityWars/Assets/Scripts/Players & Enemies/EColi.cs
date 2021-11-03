@@ -9,11 +9,16 @@ namespace Interaction {
         public GameObject healthBar;
         public GameObject actionBar;
 
+        public Behaviour halo;
+
+        public Text indicatorsText;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
             eColi = gameObject.AddComponent<PlayerEnemy>();
+            eColi.indicatorsText = indicatorsText;
             eColi.defaultPlayerActionPoints = 3;
             eColi.playerActionPoints = eColi.defaultPlayerActionPoints;
             eColi.playerHealth = 3;
@@ -27,7 +32,10 @@ namespace Interaction {
             if (TurnManager.currentTurn == "EColi") {
                 healthBar.GetComponent<Slider>().value = eColi.playerHealth;
                 actionBar.GetComponent<Slider>().value = eColi.playerActionPoints;
+                halo.enabled = true;
                 eColi.MovePlayer();
+            } else {
+                halo.enabled = false;
             }
 
             if (eColi.playerActionPoints == 0) {

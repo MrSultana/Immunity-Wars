@@ -9,11 +9,15 @@ namespace Interaction {
         public GameObject healthBar;
         public GameObject actionBar;
 
+        public Behaviour halo;
+
+        public Text indicatorsText;
         //public int testValue = 3;
 
         // Start is called before the first frame update
         private void Start() {
             sAureus = gameObject.AddComponent<PlayerEnemy>();
+            sAureus.indicatorsText = indicatorsText;
             sAureus.defaultPlayerActionPoints = 3;
             sAureus.playerActionPoints = sAureus.defaultPlayerActionPoints;
             sAureus.playerHealth = 3;
@@ -27,7 +31,10 @@ namespace Interaction {
             if (TurnManager.currentTurn == "SAureus") {
                 healthBar.GetComponent<Slider>().value = sAureus.playerHealth;
                 actionBar.GetComponent<Slider>().value = sAureus.playerActionPoints;
+                halo.enabled = true;
                 sAureus.MovePlayer();
+            } else {
+                halo.enabled = false;
             }
 
             if (sAureus.playerActionPoints == 0) {
