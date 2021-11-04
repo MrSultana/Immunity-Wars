@@ -366,9 +366,11 @@
 "Assets/Scripts/Players & Enemies/SAureus.cs"
 "Assets/Scripts/Players & Enemies/TCell.cs"
 "Assets/Scripts/UI and Menus/ActionBar.cs"
+"Assets/Scripts/UI and Menus/BeforeGame.cs"
 "Assets/Scripts/UI and Menus/HealthBar.cs"
 "Assets/Scripts/UI and Menus/Manager.cs"
 "Assets/Scripts/UI and Menus/PlayerEnemyTextDisplay.cs"
+"Assets/SimpleGridShader/DistanceScaling.cs"
 -langversion:8.0
 
 /deterministic

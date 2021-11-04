@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 public class Manager : MonoBehaviour {
 
     public void StartGame() {
+        SceneManager.LoadScene("Before Game");
+    }
+
+    public void LoadLevel1() {
         SceneManager.LoadScene("Level 1 - Artery");
     }
 

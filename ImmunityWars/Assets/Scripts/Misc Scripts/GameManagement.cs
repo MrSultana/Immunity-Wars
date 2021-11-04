@@ -14,6 +14,7 @@ namespace Interaction {
         public Text gameEndTitle;
         public GameObject endGameScreen;
         public Text levelText;
+        public Text tipText;
         public Text indicatorText;
 
         public void Start() {
@@ -60,6 +61,11 @@ namespace Interaction {
             levelText.enabled = false;
         }
 
+        private void TipText() {
+            if (Input.GetMouseButtonDown(0)) {
+                tipText.enabled = false;
+            }
+        }
         public IEnumerator Indicators(string textToDisplay) {
             indicatorText.text = textToDisplay;
             yield return new WaitForSeconds(1f);
@@ -72,6 +78,7 @@ namespace Interaction {
 
         private void Update() {
             GameEnd();
+            TipText();
         }
     }
 }

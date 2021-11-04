@@ -1,0 +1,13 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class BeforeGame : MonoBehaviour
+{
+    public void Update() {
+        if (Input.GetMouseButtonDown(0)) {
+            SceneManager.LoadScene("Level 1 - Artery");
+        }
+    }
+}
