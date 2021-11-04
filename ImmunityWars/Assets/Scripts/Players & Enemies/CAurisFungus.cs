@@ -13,6 +13,13 @@ namespace Interaction {
 
         public Text indicatorsText;
 
+        public GameObject gameManagement;
+
+        // For sound effects
+        public AudioSource deathSoundPlayer;
+        public AudioSource movementSoundPlayer;
+        public AudioSource attackSoundPlayer;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
@@ -43,8 +50,18 @@ namespace Interaction {
                 cAuris.PointsRefresh(cAuris.playerActionPoints, cAuris.defaultPlayerActionPoints);
             }
 
+            if (cAuris.playerHealth == 0) {
+                deathSoundPlayer.Play();
+                // Changes indicator text on HUD
+                gameManagement.GetComponent<GameManagement>().StartIndicator("C. auris has been eliminated");
+            }
+
             if (Input.GetMouseButtonDown(0) && cAuris.canMove) {
-                Debug.Log(TurnManager.currentTurn);
+                movementSoundPlayer.Play();
+                gameManagement.GetComponent<GameManagement>().StartIndicator("C. auris has moved");
+                cAuris.playerActionPoints -= 1;
+            } else if (Input.GetMouseButtonDown(0) && cAuris.canAttack) {
+                attackSoundPlayer.Play();
                 cAuris.playerActionPoints -= 1;
             }
             /*if (Input.GetMouseButton(0)) {

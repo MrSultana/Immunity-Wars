@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Levels/Menu's/TitleMenu.unity
     guid: 1546e035ce610a94185ca048166f824d
   - enabled: 1
+    path: Assets/Levels/Menu's/Info.unity
+    guid: 5d2cb4dc11bca51439c44b7e5d2c5ac2
+  - enabled: 1
     path: Assets/Levels/Menu's/ControlScreen.unity
     guid: ca6bdda0dee416f44988cd1c3706bb78
   - enabled: 1

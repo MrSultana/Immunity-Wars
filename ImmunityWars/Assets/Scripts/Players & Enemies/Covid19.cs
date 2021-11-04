@@ -12,6 +12,13 @@ namespace Interaction {
         public Behaviour halo;
 
         public Text indicatorsText;
+        
+        public GameObject gameManagement;
+
+        // For sound effects
+        public AudioSource deathSoundPlayer;
+        public AudioSource movementSoundPlayer;
+        public AudioSource attackSoundPlayer;
 
         //public int testValue = 3;
 
@@ -43,8 +50,18 @@ namespace Interaction {
                 covid19.PointsRefresh(covid19.playerActionPoints, covid19.defaultPlayerActionPoints);
             }
 
+            if (covid19.playerHealth == 0) {
+                deathSoundPlayer.Play();
+                // Changes indicator text on HUD
+                gameManagement.GetComponent<GameManagement>().StartIndicator("Covid-19 has been eliminated");
+            }
+
             if (Input.GetMouseButtonDown(0) && covid19.canMove) {
-                Debug.Log(TurnManager.currentTurn);
+                movementSoundPlayer.Play();
+                gameManagement.GetComponent<GameManagement>().StartIndicator("Covid-19 has moved");
+                covid19.playerActionPoints -= 1;
+            } else if (Input.GetMouseButtonDown(0) && covid19.canAttack) {
+                attackSoundPlayer.Play();
                 covid19.playerActionPoints -= 1;
             }
             /*if (Input.GetMouseButton(0)) {

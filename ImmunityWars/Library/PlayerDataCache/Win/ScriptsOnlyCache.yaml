@@ -44,6 +44,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
+    - UnityEngine.UI.RawImage
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
@@ -130,6 +131,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 91
@@ -201,6 +206,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4090}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 122
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
@@ -298,6 +305,53 @@ ScriptsOnlyBuild:
       Script: {instanceID: 2948}
     - Class: 114
       Script: {instanceID: 3146}
+    - Class: 114
+      Script: {instanceID: 3434}
+    - Class: 114
+      Script: {instanceID: 3934}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Levels/Menu's/Info.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1530}
+    - Class: 114
+      Script: {instanceID: 1532}
+    - Class: 114
+      Script: {instanceID: 2638}
+    - Class: 114
+      Script: {instanceID: 2948}
     - Class: 114
       Script: {instanceID: 3434}
     - Class: 114
@@ -528,7 +582,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
+      Hash: 093e3b8669ebee4c32ef62734c6a7e27
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: Neutrophil
@@ -540,7 +594,7 @@ ScriptsOnlyBuild:
     className: LayoutElement
   - hash:
       serializedVersion: 2
-      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
+      Hash: 093e3b8669ebee4c32ef62734c6a7e27
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: CAurisFungus
@@ -654,7 +708,7 @@ ScriptsOnlyBuild:
     className: TargetFieldOfView
   - hash:
       serializedVersion: 2
-      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
+      Hash: 093e3b8669ebee4c32ef62734c6a7e27
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: MTuberculosis
@@ -744,7 +798,7 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: cdb5ba41acc31db5b814e7a4aaf65f68
+      Hash: 860e5ce928c33f6e3d01e4cf48bc27f7
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: PlayerEnemy
@@ -906,7 +960,7 @@ ScriptsOnlyBuild:
     className: SignalTrack
   - hash:
       serializedVersion: 2
-      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
+      Hash: 093e3b8669ebee4c32ef62734c6a7e27
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: KillerTCell
@@ -918,7 +972,7 @@ ScriptsOnlyBuild:
     className: SceneAndURLLoader
   - hash:
       serializedVersion: 2
-      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
+      Hash: 093e3b8669ebee4c32ef62734c6a7e27
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: EColi
@@ -1032,7 +1086,7 @@ ScriptsOnlyBuild:
     className: SmoothFollow
   - hash:
       serializedVersion: 2
-      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
+      Hash: 093e3b8669ebee4c32ef62734c6a7e27
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: BCell
@@ -1098,13 +1152,13 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
-      Hash: cc2160bbef5ff13b44b690a0449dde04
+      Hash: 2639d4a29cbc3bb0d45f4a1c394abe59
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: GameManagement
   - hash:
       serializedVersion: 2
-      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
+      Hash: 093e3b8669ebee4c32ef62734c6a7e27
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: Covid19
@@ -1128,7 +1182,7 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
-      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
+      Hash: 093e3b8669ebee4c32ef62734c6a7e27
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: SAureus
@@ -1662,7 +1716,7 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
-      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
+      Hash: 093e3b8669ebee4c32ef62734c6a7e27
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: NKCell
@@ -1680,7 +1734,7 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
-      Hash: 97df79b2b1ad593ae224ae98e3f52ee7
+      Hash: 093e3b8669ebee4c32ef62734c6a7e27
     assemblyName: Assembly-CSharp.dll
     namespaceName: Interaction
     className: TCell
@@ -1723,6 +1777,7 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Levels/Menu's/TitleMenu.unity
+  - Assets/Levels/Menu's/Info.unity
   - Assets/Levels/Menu's/ControlScreen.unity
   - Assets/Levels/Menu's/Credits.unity
   - Assets/Levels/Level1/Level 1 - Artery.unity

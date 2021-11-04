@@ -12,6 +12,13 @@ namespace Interaction {
         public Behaviour halo;
 
         public Text indicatorsText;
+
+        public GameObject gameManagement;
+
+        // For sound effects
+        public AudioSource deathSoundPlayer;
+        public AudioSource movementSoundPlayer;
+        public AudioSource attackSoundPlayer;
         //public int testValue = 3;
 
         // Start is called before the first frame update
@@ -41,9 +48,19 @@ namespace Interaction {
                 TurnManager.turnEnd = true;
                 sAureus.PointsRefresh(sAureus.playerActionPoints, sAureus.defaultPlayerActionPoints);
             }
+            
+            if (sAureus.playerHealth == 0) {
+                deathSoundPlayer.Play();
+                // Changes indicator text on HUD
+                gameManagement.GetComponent<GameManagement>().StartIndicator("S. aureus has been eliminated");
+            }
 
             if (Input.GetMouseButtonDown(0) && sAureus.canMove) {
-                Debug.Log(TurnManager.currentTurn);
+                movementSoundPlayer.Play();
+                gameManagement.GetComponent<GameManagement>().StartIndicator("S. aureus has moved");
+                sAureus.playerActionPoints -= 1;
+            } else if (Input.GetMouseButtonDown(0) && sAureus.canAttack) {
+                attackSoundPlayer.Play();
                 sAureus.playerActionPoints -= 1;
             }
             /*if (Input.GetMouseButton(0)) {

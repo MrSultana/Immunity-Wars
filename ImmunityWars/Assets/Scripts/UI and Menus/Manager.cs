@@ -12,7 +12,7 @@ public class Manager : MonoBehaviour {
     }
 
     public void GoToInfo() {
-
+        SceneManager.LoadScene("Info");
     }
 
     public void GoToCredits() {

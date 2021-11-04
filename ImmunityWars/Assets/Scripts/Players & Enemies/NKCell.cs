@@ -13,6 +13,13 @@ namespace Interaction {
 
         public Text indicatorsText;
 
+        public GameObject gameManagement;
+
+        // For sound effects
+        public AudioSource deathSoundPlayer;
+        public AudioSource movementSoundPlayer;
+        public AudioSource attackSoundPlayer;
+
         //public int testValue = 3;
 
         // Start is called before the first frame update
@@ -43,8 +50,18 @@ namespace Interaction {
                 nkCell.PointsRefresh(nkCell.playerActionPoints, nkCell.defaultPlayerActionPoints);
             }
 
+            if (nkCell.playerHealth == 0) {
+                deathSoundPlayer.Play();
+                // Changes indicator text on HUD
+                gameManagement.GetComponent<GameManagement>().StartIndicator("NK cell has been eliminated");
+            }
+
             if (Input.GetMouseButtonDown(0) && nkCell.canMove) {
-                Debug.Log(TurnManager.currentTurn);
+                movementSoundPlayer.Play();
+                gameManagement.GetComponent<GameManagement>().StartIndicator("NK cell has moved");
+                nkCell.playerActionPoints -= 1;
+            } else if (Input.GetMouseButtonDown(0) && nkCell.canAttack) {
+                attackSoundPlayer.Play();
                 nkCell.playerActionPoints -= 1;
             }
             /*if (Input.GetMouseButton(0)) {

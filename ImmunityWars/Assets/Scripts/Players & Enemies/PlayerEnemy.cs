@@ -19,6 +19,7 @@ namespace Interaction {
         public static List<Vector3> startingPositions = new List<Vector3>();
 
         public bool canMove = false;
+        public bool canAttack = false;
 
         private GameObject colliderGameobject;
 
@@ -42,6 +43,7 @@ namespace Interaction {
 
         public void MovePlayer() {
             canMove = false;
+            canAttack = false;
             if (Input.GetMouseButtonDown(0)) {
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Creates a new ray that is released from the camera to the the mouse click position
                 if (Physics.Raycast(ray, out RaycastHit hit)) { // Checks if the raycast hits a collider on the layer "Raycollision"
@@ -61,7 +63,7 @@ namespace Interaction {
                             GameObject objectHit = colliderGameobject;
                             if (ExtensionMethods.AccountingForPlayerEnemyDistance(transform.position, colliderGameobject.transform.position)) {
                                 Attack(objectHit); // Run the attack method on the clicked player or enemy
-                                canMove = true;
+                                canAttack = true;
                             }
                             else {
                                 Debug.Log("Too far!");
@@ -71,7 +73,7 @@ namespace Interaction {
                     }
                      
                     // If the click point hits anywhere on the grid that isn't a player or enemy
-                    if (colliderGameobject.tag != "Player" && colliderGameobject.tag != "Enemy") {
+                    if (!colliderGameobject.GetComponent<CapsuleCollider>()) {
                         newPosition = hit.point;
                         newPosition.y = 1.2f;
                         newPosition = ExtensionMethods.RoundVector3(newPosition, 1.2f);

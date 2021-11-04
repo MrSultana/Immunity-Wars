@@ -18,6 +18,7 @@ namespace Interaction {
         // For sound effects
         public AudioSource deathSoundPlayer;
         public AudioSource movementSoundPlayer;
+        public AudioSource attackSoundPlayer;
 
         //public int testValue = 3;
 
@@ -38,10 +39,6 @@ namespace Interaction {
         // Update is called once per frame
         private void Update() {
             if (tCell.playerActionPoints == 0) {
-                halo.enabled = false;
-                if (halo.enabled == false) {
-                    Debug.Log("Jeff");
-                }
                 TurnManager.turnEnd = true;
                 tCell.PointsRefresh(tCell.playerActionPoints, tCell.defaultPlayerActionPoints);
             }
@@ -50,20 +47,25 @@ namespace Interaction {
             if (TurnManager.currentTurn == "TCell") {
                 healthBar.GetComponent<Slider>().value = tCell.playerHealth;
                 actionBar.GetComponent<Slider>().value = tCell.playerActionPoints;
-                halo.enabled = true;
+                halo.enabled = true; // Turns on halo indicator
                 tCell.MovePlayer();
             } else {
-                halo.enabled = false;
+                halo.enabled = false; // Turns off halo indicator
             }
 
             if (tCell.playerHealth == 0) {
                 deathSoundPlayer.Play();
+                // Changes indicator text on HUD
                 gameManagement.GetComponent<GameManagement>().StartIndicator("T cell has been eliminated");
             }
             
 
             if (Input.GetMouseButtonDown(0) && tCell.canMove) {
                 movementSoundPlayer.Play();
+                gameManagement.GetComponent<GameManagement>().StartIndicator("T cell has moved");
+                tCell.playerActionPoints -= 1;
+            } else if (Input.GetMouseButtonDown(0) && tCell.canAttack) {
+                attackSoundPlayer.Play();
                 tCell.playerActionPoints -= 1;
             }
             /*if (Input.GetMouseButton(0)) {

@@ -35,12 +35,10 @@ namespace Interaction {
             if (GameObject.FindGameObjectsWithTag("Player").Length <= 0) {
                 gameEndTitle.text = "The Invaders Won!";
                 endGameScreen.SetActive(true);
-                Application.Quit();
             }
             else if (GameObject.FindGameObjectsWithTag("Enemy").Length <= 0) {
                 gameEndTitle.text = "The Immune Cells Won!";
                 endGameScreen.SetActive(true);
-                Application.Quit();
             }
         }
 
@@ -64,10 +62,8 @@ namespace Interaction {
 
         public IEnumerator Indicators(string textToDisplay) {
             indicatorText.text = textToDisplay;
-            for (float i = 2f; i >= 0; i -= Time.deltaTime) {
-                indicatorText.color = new Color(1, 1, 1, i);
-                yield return null;
-            }
+            yield return new WaitForSeconds(1f);
+            indicatorText.text = "";
         }
 
         public void StartIndicator(string textToDisplay) {
